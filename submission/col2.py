@@ -20,7 +20,7 @@ if __name__ == "__main__":
     lines = sc.textFile(sys.argv[1], 1)
 
     lines = lines.mapPartitions(lambda x: reader(x))\
-    .map(lambda x: ('%s DATE Exact date of occurrence for the reported event %s' % (x[2], valid_check(x[2]))))\
+    .map(lambda x: ('%s TIME Exact time of occurrence for the reported event %s' % (x[2], valid_check(x[2]))))\
 
     lines.saveAsTextFile("col2.out")
 
