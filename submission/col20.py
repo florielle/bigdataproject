@@ -14,10 +14,11 @@ if __name__ == "__main__":
                 return 'VALID'
             else:
                 return 'INVALID'
-        elif num == '':
-            return 'NULL'
-        else:
-            return 'INVALID'
+        except:
+            if not num:
+                return 'NULL'
+            else:
+                return 'INVALID'
 
     lines = lines.mapPartitions(lambda x: reader(x))\
     .map(lambda x: '%s Y coord for NYS plane system %s' % (x[20], valid_y_coord(x[20])))
