@@ -9,7 +9,7 @@ if __name__ == "__main__":
     lines = sc.textFile(sys.argv[1], 1)
 
     def valid_boro(string):
-        if string IN ('QUEENS', 'STATEN ISLAND', 'BRONX', 'BROOKLYN', 'MANHATTAN'):
+        if string in ('QUEENS', 'STATEN ISLAND', 'BRONX', 'BROOKLYN', 'MANHATTAN'):
             return 'VALID'
         elif string.replace(' ', '') == '':
             return 'NULL'
