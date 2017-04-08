@@ -10,7 +10,7 @@ if __name__ == "__main__":
     lines = sc.textFile(sys.argv[1], 1)
 
     def valid_code(string):
-        if string in ('ATTEMPTED', 'COMPLETED'):
+        if string in ('MISDEMEANOR', 'FELONY', 'VIOLATION'):
             return 'VALID'
         elif string.replace(' ', '') == '' or np.isnan(string):
             return 'NULL'
@@ -18,8 +18,8 @@ if __name__ == "__main__":
             return 'INVALID'
 
     lines = lines.mapPartitions(lambda x: reader(x))\
-    .map(lambda x: '%s TEXT completed or attempted status %s' % (x[10], valid_code(x[10])))
+    .map(lambda x: '%s TEXT crime category %s' % (x[11], valid_code(x[11])))
 
-    lines.saveAsTextFile("col10.out")
+    lines.saveAsTextFile("col11.out")
 
     sc.stop()
