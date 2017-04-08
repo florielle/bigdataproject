@@ -15,17 +15,16 @@ if __name__ == "__main__":
         # Filter header out
         lines = lines.filter(lambda x: x != first_line)
 
-
     def valid_digit(num):
         if num.isdigit():
-            return 'VALID'    
+            return 'VALID'
         elif num == '':
             return 'NULL'
         else:
             return 'INVALID'
 
     lines = lines.mapPartitions(lambda x: reader(x))\
-    .map(lambda x: '%s\tINT Randomly generated persistent ID for each complaint\t%s' % (x[0], valid_digit(x[0])))
+    .map(lambda x: '%s\tINT\tRandomly generated persistent ID for each complaint\t%s' % (x[0], valid_digit(x[0])))
 
     lines.saveAsTextFile("col0.out")
 
