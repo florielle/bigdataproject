@@ -8,6 +8,12 @@ if __name__ == "__main__":
     sc = SparkContext()
 
     lines = sc.textFile(sys.argv[1], 1)
+    first_line = lines.first()
+
+    if first_line.split(',')[0] == u'CMPLNT_NUM':
+        # First line is header
+        # Filter header out
+        lines = lines.filter(lambda x: x != first_line)
 
     def valid_code(string):
         if string in ('MISDEMEANOR', 'FELONY', 'VIOLATION'):
@@ -18,7 +24,7 @@ if __name__ == "__main__":
             return 'INVALID'
 
     lines = lines.mapPartitions(lambda x: reader(x))\
-    .map(lambda x: '%s TEXT level of offense %s' % (x[11], valid_code(x[11])))
+    .map(lambda x: '%s\tTEXT\tlevel of offense\t%s' % (x[11], valid_code(x[11])))
 
     lines.saveAsTextFile("col11.out")
 

@@ -8,6 +8,13 @@ if __name__ == "__main__":
     sc = SparkContext()
 
     lines = sc.textFile(sys.argv[1], 1)
+    first_line = lines.first()
+
+    if first_line.split(',')[0] == u'CMPLNT_NUM':
+        # First line is header
+        # Filter header out
+        lines = lines.filter(lambda x: x != first_line)
+
 
     def valid_check(date):
         try:
@@ -23,7 +30,7 @@ if __name__ == "__main__":
                 return 'INVALID'
 
     lines = lines.mapPartitions(lambda x: reader(x))\
-    .map(lambda x: '%s DATE Date event was reported to police %s' % (x[5], valid_check(x[5])))
+    .map(lambda x: '%s\tDATE\tDate event was reported to police\t%s' % (x[5], valid_check(x[5])))
 
     lines.saveAsTextFile("col5.out")
 

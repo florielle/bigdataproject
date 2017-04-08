@@ -7,6 +7,12 @@ if __name__ == "__main__":
     sc = SparkContext()
 
     lines = sc.textFile(sys.argv[1], 1)
+    first_line = lines.first()
+
+    if first_line.split(',')[0] == u'CMPLNT_NUM':
+        # First line is header
+        # Filter header out
+        lines = lines.filter(lambda x: x != first_line)
 
     def valid_3digits(num):
         if num.isdigit() and len(num) == 3:
@@ -17,7 +23,7 @@ if __name__ == "__main__":
             return 'INVALID'
 
     lines = lines.mapPartitions(lambda x: reader(x))\
-    .map(lambda x: '%s INT Three digit internal classification code %s' % (x[8], valid_3digits(x[8])))
+    .map(lambda x: '%s\tINT\tThree digit internal classification code\t%s' % (x[8], valid_3digits(x[8])))
 
     lines.saveAsTextFile("col8.out")
 

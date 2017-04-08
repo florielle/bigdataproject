@@ -7,6 +7,12 @@ if __name__ == "__main__":
     sc = SparkContext()
 
     lines = sc.textFile(sys.argv[1], 1)
+    first_line = lines.first()
+
+    if first_line.split(',')[0] == u'CMPLNT_NUM':
+        # First line is header
+        # Filter header out
+        lines = lines.filter(lambda x: x != first_line)
 
     def valid_y_coord(num):
         try:
@@ -20,7 +26,7 @@ if __name__ == "__main__":
             return 'INVALID'
 
     lines = lines.mapPartitions(lambda x: reader(x))\
-    .map(lambda x: '%s Y coord for NYS plane system %s' % (x[20], valid_y_coord(x[20])))
+    .map(lambda x: '%s\tFLOAT\tY coord for NYS plane system\t%s' % (x[20], valid_y_coord(x[20])))
 
     lines.saveAsTextFile("col20.out")
 

@@ -7,6 +7,12 @@ if __name__ == "__main__":
     sc = SparkContext()
 
     lines = sc.textFile(sys.argv[1], 1)
+    first_line = lines.first()
+
+    if first_line.split(',')[0] == u'CMPLNT_NUM':
+        # First line is header
+        # Filter header out
+        lines = lines.filter(lambda x: x != first_line)
 
     def valid_string(string):
         chars = set('qwertyuiopasdfghjklzxcvbnm')
@@ -18,7 +24,7 @@ if __name__ == "__main__":
             return 'INVALID'
 
     lines = lines.mapPartitions(lambda x: reader(x))\
-    .map(lambda x: '%s TEXT premises description %s' % (x[16], valid_string(x[16])))
+    .map(lambda x: '%s\tTEXT\tpremises description\t%s' % (x[16], valid_string(x[16])))
 
     lines.saveAsTextFile("col16.out")
 
