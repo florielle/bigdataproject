@@ -15,4 +15,3 @@ for entry in csv.reader(sys.stdin, delimiter='\t'):
     key = entry[-1]
     value = '1'
     print('{0}\t{1}'.format(key, value))
-
