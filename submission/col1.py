@@ -15,12 +15,22 @@ if __name__ == "__main__":
         # Filter header out
         lines = lines.filter(lambda x: x != first_line)
 
-    def valid_check(date):
+    def valid_check(date, end_date):
         try:
             new_date = datetime.strptime(date,'%m/%d/%Y')
             if new_date.year >= 1900 and new_date.year < 2017:
-                return 'VALID'
+                try:
+                    # Ensure that the end date is greater or equal the start date
+                    new_end_date = datetime.strptime(end_date,'%m/%d/%Y')
+                    if new_end_date >= new_date:
+                        return 'VALID'
+                    else:
+                        return 'INVALID'
+                except:
+                    # If no end date, assume valid
+                    return 'VALID'
             else:
+                # If cannot cast to datetime is invalid
                 return 'INVALID'
         except:
             if date == '':
@@ -29,7 +39,7 @@ if __name__ == "__main__":
                 return 'INVALID'
 
     lines = lines.mapPartitions(lambda x: reader(x))\
-    .map(lambda x: '%s\tDATE\tExact date or start date of occurrence for the reported event\t%s' % (x[1], valid_check(x[1])))
+    .map(lambda x: '%s\tDATE\tExact date or start date of occurrence for the reported event\t%s' % (x[1], valid_check(x[1], x[3])))
 
     lines.saveAsTextFile("col1.out")
 

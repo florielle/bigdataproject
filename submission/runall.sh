@@ -18,3 +18,5 @@ for I in {0..22}
     do
         /usr/bin/hadoop fs -getmerge col$I.out ./output/col$I.out 
     done
+
+sh runall_counts.sh

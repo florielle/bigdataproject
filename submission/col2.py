@@ -4,10 +4,20 @@ from pyspark import SparkContext
 from csv import reader
 from datetime import datetime
 
-def valid_check(time):
+def valid_check(time ,date, endtime, enddate):
     try:
         datetime.strptime(time,'%H:%M:%S')
-        return 'VALID'
+        try:
+            # Check that the start time is before the end time
+            start = datetime.strptime(date + '-' + time,'%m/%d/%Y-%H:%M:%S')
+            end = datetime.strptime(enddate + '-' + endtime,'%m/%d/%Y-%H:%M:%S')
+            if end >= start:
+                return 'VALID'
+            else:
+                return 'INVALID'
+        except:
+            # If cannot compare start and end, asume valid
+            return 'VALID'
     except:
         if time == '':
             return 'NULL'
@@ -26,7 +36,7 @@ if __name__ == "__main__":
         lines = lines.filter(lambda x: x != first_line)
 
     lines = lines.mapPartitions(lambda x: reader(x))\
-    .map(lambda x: ('%s\tTIME\tExact time of occurrence for the reported event\t%s' % (x[2], valid_check(x[2]))))\
+    .map(lambda x: ('%s\tTIME\tExact time of occurrence for the reported event\t%s' % (x[2], valid_check(x[2], x[1], x[4],x[3]))))\
 
     lines.saveAsTextFile("col2.out")
 
