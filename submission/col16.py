@@ -10,16 +10,12 @@ if __name__ == "__main__":
 
     def valid_string(string):
         chars = set('qwertyuiopasdfghjklzxcvbnm')
-        try:
-            if any((c in chars) for c in string.lower()):
-                return 'VALID'
-            else:
-                return 'INVALID'
-        except:
-            if string.replace(' ', '') == '':
-                return 'NULL'
-            else:
-                return 'INVALID'
+        if any((c in chars) for c in string.lower()):
+            return 'VALID'
+        elif not string.replace(' ', ''):
+            return 'NULL'
+        else:
+            return 'INVALID'
 
     lines = lines.mapPartitions(lambda x: reader(x))\
     .map(lambda x: '%s TEXT premises description %s' % (x[16], valid_string(x[16])))
