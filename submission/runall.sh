@@ -1,5 +1,3 @@
-mkdir output
-
 echo "Removing output files from hfs"
 for I in {0..22}
     do        
