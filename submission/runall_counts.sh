@@ -13,5 +13,5 @@ for I in {3..4}
 echo "Retrieving output files from hfs"
 for I in {3..4}
     do
-        /usr/bin/hadoop fs -getmerge col$I_counts.out ./output/col_counts_$I.out 
+        /usr/bin/hadoop fs -getmerge col_counts_$I.out ./output/col_counts_$I.out 
     done
