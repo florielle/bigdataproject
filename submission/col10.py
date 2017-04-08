@@ -9,8 +9,8 @@ if __name__ == "__main__":
 
     lines = sc.textFile(sys.argv[1], 1)
 
-    def valid_boro(string):
-        if string in ('QUEENS', 'STATEN ISLAND', 'BRONX', 'BROOKLYN', 'MANHATTAN'):
+    def valid_code(string):
+        if string in ('ATTEMPTED', 'COMPLETED'):
             return 'VALID'
         elif string.replace(' ', '') == '' or np.isnan(string):
             return 'NULL'
@@ -18,8 +18,8 @@ if __name__ == "__main__":
             return 'INVALID'
 
     lines = lines.mapPartitions(lambda x: reader(x))\
-    .map(lambda x: '%s TEXT nyc borough %s' % (x[13], valid_boro(x[13])))
+    .map(lambda x: '%s TEXT completed or attempted status %s' % (x[10], valid_code(x[10])))
 
-    lines.saveAsTextFile("col13.out")
+    lines.saveAsTextFile("col10.out")
 
     sc.stop()
