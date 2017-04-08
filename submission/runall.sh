@@ -13,8 +13,8 @@ for PYFILE in $ls *.py
     spark-submit ./$PYFILE NYPD_Complaint_Data_Historic.csv
     done
 
+echo "Retrieving output files from hfs"
 for I in {1..22}
     do
-        echo "Retrieving output files from hfs"
-        /usr/bin/hadoop fs -getmerge col$I.out col$I.out 
+        /usr/bin/hadoop fs -getmerge col$I.out ./output/col$I.out 
     done
