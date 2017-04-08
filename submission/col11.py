@@ -18,7 +18,7 @@ if __name__ == "__main__":
             return 'INVALID'
 
     lines = lines.mapPartitions(lambda x: reader(x))\
-    .map(lambda x: '%s TEXT crime category %s' % (x[11], valid_code(x[11])))
+    .map(lambda x: '%s TEXT level of offense %s' % (x[11], valid_code(x[11])))
 
     lines.saveAsTextFile("col11.out")
 

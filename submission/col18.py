@@ -20,8 +20,8 @@ if __name__ == "__main__":
                 return 'VALID'
 
     lines = lines.mapPartitions(lambda x: reader(x))\
-    .map(lambda x: '%s TEXT internal description corresponding to PD code %s' % (x[9], valid_string(x[9])))
+    .map(lambda x: '%s TEXT housing deveopment name if applicable %s' % (x[18], valid_string(x[18])))
 
-    lines.saveAsTextFile("col9.out")
+    lines.saveAsTextFile("col18.out")
 
     sc.stop()
