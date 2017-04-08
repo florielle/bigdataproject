@@ -2,7 +2,6 @@ from __future__ import print_function
 import sys
 from pyspark import SparkContext
 from csv import reader
-import numpy as np
 
 if __name__ == "__main__":
     sc = SparkContext()
@@ -18,7 +17,7 @@ if __name__ == "__main__":
     def valid_code(string):
         if string in ('MISDEMEANOR', 'FELONY', 'VIOLATION'):
             return 'VALID'
-        elif string.replace(' ', '') == '' or np.isnan(string):
+        elif not string.replace(' ', ''):
             return 'NULL'
         else:
             return 'INVALID'
