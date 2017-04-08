@@ -2,7 +2,6 @@ from __future__ import print_function
 import sys
 from pyspark import SparkContext
 from csv import reader
-from numpy import np
 
 if __name__ == "__main__":
     sc = SparkContext()
@@ -17,7 +16,7 @@ if __name__ == "__main__":
             else:
                 return 'INVALID'
         except:
-            if string.replace(' ', '') == '' or np.isnan(string):
+            if string.replace(' ', '') == '':
                 return 'NULL'
             else:
                 return 'INVALID'
