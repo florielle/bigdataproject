@@ -1,10 +1,10 @@
 #!/usr/bin/python
 
 # Call:
-# hjs -files /home/fnd212/BD/BD_A_01/task4 -mapper task4/map.py \
-# -reducer task4/reduce.py -input \
-# /user/ecc290/HW1data/parking-violations.csv \
-# -output /user/fnd212/task4/task4.out
+# hjs -files /home/fnd212/BD/project/bigdataproject/map_reduce/ 
+# -mapper map.py -reducer reduce.py -input col0.out 
+# -output col0_counts.out
+
 
 import sys
 import csv

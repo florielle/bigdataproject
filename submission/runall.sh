@@ -1,8 +1,7 @@
-rm -r -f output
 mkdir output
 
 echo "Removing output files from hfs"
-for I in {1..22}
+for I in {0..22}
     do        
         /usr/bin/hadoop fs -rm -r -skipTrash col$I.out
     done
@@ -14,7 +13,7 @@ for PYFILE in $ls *.py
     done
 
 echo "Retrieving output files from hfs"
-for I in {1..22}
+for I in {0..22}
     do
         /usr/bin/hadoop fs -getmerge col$I.out ./output/col$I.out 
     done
