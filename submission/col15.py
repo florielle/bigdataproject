@@ -12,7 +12,7 @@ if __name__ == "__main__":
     def valid_string(string):
         chars = set('qwertyuiopasdfghjklzxcvbnm')
         try:
-            if any((c in chars) for c in string.lower():
+            if any((c in chars) for c in string.lower()):
                 return 'VALID'
             else:
                 return 'INVALID'
