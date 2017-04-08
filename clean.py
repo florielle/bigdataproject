@@ -12,14 +12,30 @@ def fix_date(date):
     except:
         return ''
 
-def check_time_and_fix(row):
+def check_and_fix(row):
+    #Fixes '24:00:00' times 
     if row[2] == '24:00:00':
         row[2] = '00:00:00'
         row[1] = fix_date(row[1])
     if row[4] == '24:00:00':
         row[4] = '00:00:00'
         row[3] = fix_date(row[3])
+
+    #Combines categories in column 7
+    lookup7 = col7.get(row[7], None)
+    if lookup7 is not None:
+        row[7] = lookup7
+
+    #Fixes column 15
+    row[15] = row[15].strip()
+
     return row
+
+col7 = {'ADMINISTRATIVE CODES': 'ADMINISTRATIVE CODE',
+        'INTOXICATED/IMPAIRED DRIVING': 'INTOXICATED & IMPAIRED DRIVING',
+        'KIDNAPPING': 'KIDNAPPING & RELATED OFFENSES',
+        'KIDNAPPING AND RELATED OFFENSES': 'KIDNAPPING & RELATED OFFENSES',
+        'OTHER STATE LAWS (NON PENAL LA': 'OTHER STATE LAWS (NON PENAL LAW)'}
 
 def list_to_csv_str(x):
     """Given a list of strings, returns a properly-csv-formatted string."""
@@ -33,7 +49,7 @@ if __name__ == "__main__":
     lines = sc.textFile(sys.argv[1], 1)
 
     lines = lines.mapPartitions(lambda x: csv.reader(x))\
-   .map(lambda x: check_time_and_fix(x))\
+   .map(lambda x: check_and_fix(x))\
    .map(list_to_csv_str)
 
     lines.saveAsTextFile("output.out")
