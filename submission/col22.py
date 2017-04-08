@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     def valid_long(num):
         try:
-            if float(num) >= -180 and float(num) <= 180:
+            if float(num) >= -75 and float(num) <= -73:
                 return 'VALID'
             else:
                 return 'INVALID'    

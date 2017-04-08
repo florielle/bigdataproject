@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     def valid_lat(num):
         try:
-            if float(num) >= -90 and float(num) <= 90:
+            if float(num) >= 40 and float(num) <= 42:
                 return 'VALID'
             else:
                 return 'INVALID'    
