@@ -12,6 +12,16 @@ def fix_date(date):
     except:
         return ''
 
+def fix_10xx_to_20xx(date):
+    try:
+        if date[7] == '0' and date[6] != '2':
+            newdate = date[:6]+ '20' + date[8:]
+            return newdate
+        else:
+            return date
+    except:
+        return ''
+
 def check_and_fix(row):
     #Fixes '24:00:00' times 
     if row[2] == '24:00:00':
@@ -20,6 +30,11 @@ def check_and_fix(row):
     if row[4] == '24:00:00':
         row[4] = '00:00:00'
         row[3] = fix_date(row[3])
+
+    #Fixes years with 10xx to 20xx
+    row[1] = fix_10xx_to_20xx(row[1])
+    row[3] = fix_10xx_to_20xx(row[3])
+    row[5] = fix_10xx_to_20xx(row[5])
 
     #Combines categories in column 7
     lookup7 = col7.get(row[7], None)
