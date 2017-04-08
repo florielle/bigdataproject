@@ -10,7 +10,7 @@ for I in {1..22}
 for PYFILE in $ls *.py
     do
     echo "running $PYFILE"
-    spark-submit ./$PYFILE NYPD_Complaint_Data_Historic
+    spark-submit ./$PYFILE NYPD_Complaint_Data_Historic.csv
     done
 
 for I in {1..22}
