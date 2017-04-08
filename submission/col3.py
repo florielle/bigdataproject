@@ -18,7 +18,7 @@ if __name__ == "__main__":
     def valid_check(date):
         try:
             new_date = datetime.strptime(date, '%m/%d/%Y')
-            if new_date.year > 1960 and new_date.year < 2017:
+            if new_date.year >= 1900 and new_date.year < 2017:
                 return 'VALID'
             else:
                 return 'INVALID'
