@@ -10,14 +10,17 @@ if __name__ == "__main__":
     lines = sc.textFile(sys.argv[1], 1)
 
     def valid_string(string):
+        chars = set('qwertyuiopasdfghjklzxcvbnm')
         try:
-            float(string.replace(' ', ''))
-            return 'INVALID'
+            if any((c in chars) for c in string.lower():
+                return 'VALID'
+            else:
+                return 'INVALID'
         except:
             if string.replace(' ', '') == '' or np.isnan(string):
                 return 'NULL'
             else:
-                return 'VALID'
+                return 'INVALID'
 
     lines = lines.mapPartitions(lambda x: reader(x))\
     .map(lambda x: '%s TEXT jurisdiction %s' % (x[12], valid_string(x[12])))
