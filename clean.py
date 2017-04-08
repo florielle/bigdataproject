@@ -12,7 +12,7 @@ def fix_date(date):
     except:
         return ''
 
-def fix_10xx_to_20xx(date):
+def fix_y0xx_to_20xx(date):
     try:
         if date[7] == '0' and date[6] != '2':
             newdate = date[:6]+ '20' + date[8:]
@@ -31,10 +31,10 @@ def check_and_fix(row):
         row[4] = '00:00:00'
         row[3] = fix_date(row[3])
 
-    #Fixes years with 10xx to 20xx
-    row[1] = fix_10xx_to_20xx(row[1])
-    row[3] = fix_10xx_to_20xx(row[3])
-    row[5] = fix_10xx_to_20xx(row[5])
+    #Fixes years with y0xx where y != 2 to 20xx
+    row[1] = fix_y0xx_to_20xx(row[1])
+    row[3] = fix_y0xx_to_20xx(row[3])
+    row[5] = fix_y0xx_to_20xx(row[5])
 
     #Combines categories in column 7
     lookup7 = col7.get(row[7], None)
