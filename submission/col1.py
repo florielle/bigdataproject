@@ -30,12 +30,13 @@ if __name__ == "__main__":
                     # If no end date, assume valid
                     return 'VALID'
             else:
-                # If cannot cast to datetime is invalid
+                # If not within the right time range, it is invalid
                 return 'INVALID'
         except:
             if date == '':
                 return 'NULL'
             else:
+                #If cannot cast to datetime and is not null, it's invalid
                 return 'INVALID'
 
     lines = lines.mapPartitions(lambda x: reader(x))\
