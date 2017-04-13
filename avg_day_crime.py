@@ -13,7 +13,7 @@ if __name__ == "__main__":
             crime_date = datetime.strptime(day,'%m/%d/%Y')
             year_crime = crime_date.year
             monthday = ''.join([str(crime_date.month),'-',str(crime_date.day)])
-            if year_crime>= 2007:
+            if year_crime>= 2008:
               return monthday
             else:
                 return ''
