@@ -14,7 +14,6 @@ if __name__ == "__main__":
             return crime_time
         except:
             return ''
-#    top_ten = ['ASSAULT 2,1,UNCLASSIFIED', 'LARCENY,PETIT FROM AUTO', 'MARIJUANA, POSSESSION 4 & 5', 'MISCHIEF, CRIMINAL 4, OF MOTOR', 'HARASSMENT,SUBD 1,CIVILIAN', 'LARCENY,PETIT FROM BUILDING,UN', 'LARCENY,PETIT FROM STORE-SHOPL', 'AGGRAVATED HARASSMENT', 'HARASSMENT,SUBD 3,4,5', 'ASSAULT 3']
 
     top_lines = lines.mapPartitions(lambda x: reader(x))\
     .map(lambda x: (x[9], 1))\
