@@ -22,6 +22,17 @@ def fix_y0xx_to_20xx(date):
     except:
         return ''
 
+def validate_start_end(start_date, start_time, end_date, end_time):
+    start = datetime.strptime(start_date + '-' + start_time,'%m/%d/%Y-%H:%M:%S')
+    end = datetime.strptime(end_date + '-' + end_time,'%m/%d/%Y-%H:%M:%S')
+
+    if end >= start:
+        return start_date, start_time, end_date, end_time
+    else:
+        # Return null values
+        return '', '', '', ''
+
+
 def check_and_fix(row):
     #Fixes '24:00:00' times 
     if row[2] == '24:00:00':
@@ -43,6 +54,8 @@ def check_and_fix(row):
 
     #Fixes column 15
     row[15] = row[15].strip()
+
+    row[1], row[2], row[3], row[4] = validate_start_end(row[1], row[2], row[3], row[4])
 
     return row
 
