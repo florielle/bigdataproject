@@ -1,3 +1,8 @@
+'''
+Returns the count of incidents aggregated by 
+weekday and weekend.
+'''
+
 from __future__ import print_function
 import sys
 from pyspark import SparkContext
