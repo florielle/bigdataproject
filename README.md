@@ -23,7 +23,7 @@ spark-submit SCRIPT_NAME.py /user/YOUR_NETID/cleaned_data.csv
 ```
 
 #### Special Cases
-agg2cols.py:
+##### agg2cols.py
 This script will do a groupby for two columns and then count the number of instances per group. 
 For example if we want to count the number of felonies, misdemeanors and violations (column 11) for each borough (column 13) we do, 
 ```
@@ -34,7 +34,7 @@ In a general way we do
 spark-submit agg2cols.py [column_1] [column_2] /user/YOUR_NETID/cleaned_data.csv
 ```
 
-countuniques.py:
+##### countuniques.py
 ```
 spark-submit countuniques.py [column] /user/YOUR_NETID/cleaned_data.csv
 ```
