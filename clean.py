@@ -22,15 +22,44 @@ def fix_y0xx_to_20xx(date):
     except:
         return ''
 
-def validate_start_end(start_date, start_time, end_date, end_time):
-    start = datetime.strptime(start_date + '-' + start_time,'%m/%d/%Y-%H:%M:%S')
-    end = datetime.strptime(end_date + '-' + end_time,'%m/%d/%Y-%H:%M:%S')
+def validate_start_end_datetime(start_date, start_time, end_date, end_time):
+    try:
+        start = datetime.strptime(start_date + '-' + start_time,'%m/%d/%Y-%H:%M:%S')
+    except:
+        start = None
+    try:
+        end = datetime.strptime(end_date + '-' + end_time,'%m/%d/%Y-%H:%M:%S')
+    except:
+        end = None
 
-    if end >= start:
-        return start_date, start_time, end_date, end_time
-    else:
-        # Return null values
-        return '', '', '', ''
+    if start is not None and end is not None and end >= start:
+        return start_time, end_time
+    elif start is not None and end is None:
+        return start_time, ''
+    elif start is None and end is not None:
+        return '', end_time
+
+    return '', ''
+
+
+def validate_start_end_date(start_date, end_date):
+    try:
+        start = datetime.strptime(start_date, '%m/%d/%Y')
+    except:
+        start = None
+    try:
+        end = datetime.strptime(end_date,'%m/%d/%Y')
+    except:
+        end = None
+
+    if start is not None and end is not None and end >= start:
+        return start_date, end_date
+    elif start is not None and end is None:
+        return start_date, ''
+    elif start is None and end is not None:
+        return '', end_date
+
+    return '', ''
 
 
 def check_and_fix(row):
@@ -55,7 +84,8 @@ def check_and_fix(row):
     #Fixes column 15
     row[15] = row[15].strip()
 
-    row[1], row[2], row[3], row[4] = validate_start_end(row[1], row[2], row[3], row[4])
+    row[2], row[4] = validate_start_end_datetime(row[1], row[2], row[3], row[4])
+    row[1], row[3] = validate_start_end_date(row[1], row[3])
 
     return row
 
