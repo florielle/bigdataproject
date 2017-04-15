@@ -1,8 +1,15 @@
 # Big Data Project
 ## Joyce Wu, Felipe Ducau, Alex Simonoff
 
+### Data Used
+The dataset used for this project can be downloaded from https://data.cityofnewyork.us/Public-Safety/NYPD-Complaint-Data-Historic/qgea-i56i
+
 ### General Running Instructions
-These instructions assume you have the NYPD Complaint Data uploaded to HFS. If not, hfs -put NYPD_Complaint_data into your /user/NET_ID folder
+These instructions assume you have the NYPD Complaint Data uploaded to HFS. If not it can be done with
+```
+hfs -put NYPD_Complaint_data into your /user/NET_ID folder
+```
+
 To ensure we have clean data, first run:
   * spark-submit clean.py user/YOUR_NETID/NYPD_COMPLAINT_DATA
   * hfs -getmerge output.out output.out
