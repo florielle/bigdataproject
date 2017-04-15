@@ -17,6 +17,6 @@ if __name__ == "__main__":
     .reduceByKey(lambda x,y: x+y)\
     .sortByKey()
 
-    lines.saveAsTextFile("by_prescinct.out")
+    lines.saveAsTextFile("by_prescinct_violent.out")
 
     sc.stop()
