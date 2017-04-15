@@ -2,7 +2,7 @@
 ## Joyce Wu, Felipe Ducau, Alex Simonoff
 
 ### Data Used
-The dataset used for this project can be downloaded from https://data.cityofnewyork.us/Public-Safety/NYPD-Complaint-Data-Historic/qgea-i56i
+The dataset used for this project can be downloaded from the [NYC Open Data](https://data.cityofnewyork.us/Public-Safety/NYPD-Complaint-Data-Historic/qgea-i56i) portal.
 
 ### General Running Instructions
 These instructions assume you have the NYPD Complaint Data uploaded to HFS. If not it can be done with
