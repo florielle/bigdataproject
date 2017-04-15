@@ -1,3 +1,8 @@
+'''
+Same as time_of_day_crime_rates.py but only consider 
+the top10 crimes. 
+'''
+
 from __future__ import print_function
 import sys
 from pyspark import SparkContext

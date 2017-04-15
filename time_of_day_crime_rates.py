@@ -1,3 +1,7 @@
+'''
+Count the number of crimes per hour of the day it occurred. 
+'''
+
 from __future__ import print_function
 import sys
 from pyspark import SparkContext
@@ -23,4 +27,3 @@ if __name__ == "__main__":
     lines.saveAsTextFile("time_of_crime.out")
 
     sc.stop()
-

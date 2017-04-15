@@ -1,3 +1,8 @@
+'''
+This script will count the difference in days between the start date and the end date for all rows where 
+the start time is '24:00:00'
+'''
+
 from __future__ import print_function
 import sys
 from pyspark import SparkContext

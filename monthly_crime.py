@@ -1,3 +1,8 @@
+'''
+Aggregate counts by month and year in which 
+occurred. 
+'''
+
 from __future__ import print_function
 import sys
 from pyspark import SparkContext

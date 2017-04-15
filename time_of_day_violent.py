@@ -1,3 +1,7 @@
+'''
+Same as time_of_day_rates.py but for violent crimes.
+'''
+
 from __future__ import print_function
 import sys
 from pyspark import SparkContext

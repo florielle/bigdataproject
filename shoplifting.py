@@ -1,3 +1,8 @@
+'''
+Counts the number of shoplifting incidents aggregated by 
+PD_DESC, PREM_TYP_DESC
+'''
+
 from __future__ import print_function
 import sys
 from pyspark import SparkContext
