@@ -57,13 +57,14 @@ Each script can be individualy run with
 spark-submit [colX.py] /user/YOUR_NETID/cleaned_data.csv
 ```
 
-The output will be saved in colX.out.
+The output will be saved in `colX.out`.
 
 After we ran the column scripts we use the map reduce tasks in the map_reduce folder to count the number of VALID, INVALID and NULL occurrences per column. This is done with the command
 
 ```
 /usr/bin/hadoop jar /opt/cloudera/parcels/CDH-5.9.0-1.cdh5.9.0.p0.23/lib/hadoop-mapreduce/hadoop-streaming.jar -files "map_reduce/" -mapper "map_reduce/map.py" -reducer "map_reduce/reduce.py" -input [colX.out] -output [col_counts_X.out] 
 ```
+and the output will be saved in `col_counts_X.out`.
 
 The entire procedure of running all the colX.py scripts and creating the counts for each column can be ran directly using the runall.sh bash script as follows
 
@@ -71,4 +72,4 @@ The entire procedure of running all the colX.py scripts and creating the counts 
 sh runall.sh
 ```
 
-which creates all the colX.out and col_counts_X.out files. 
+which creates all the `colX.out` and `col_counts_X.out` files. 
