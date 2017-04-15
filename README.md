@@ -25,18 +25,26 @@ spark-submit SCRIPT_NAME.py /user/YOUR_NETID/cleaned_data.csv
 #### Special Cases
 ##### agg2cols.py
 This script will do a groupby for two columns and then count the number of instances per group. 
-For example if we want to count the number of felonies, misdemeanors and violations (column 11) for each borough (column 13) we do, 
+For example if we want to count the number of felonies, misdemeanors and violations (column 11) for each borough (column 13) we do:
 ```
 spark-submit agg2cols.py /user/YOUR_NETID/cleaned_data.csv 13 11 
 ```
-In a general way we do
+
+In general, where [column_1] = # of first column and [column_2] = # of second column, we do:
 ```
 spark-submit agg2cols.py /user/YOUR_NETID/cleaned_data.csv [column_1] [column_2] 
 ```
 
 ##### countuniques.py
+This script will count up the number of instances for each unique value in a column specified, where [column] = # of column.
 ```
 spark-submit countuniques.py /user/YOUR_NETID/cleaned_data.csv [column]
+```
+
+##### delay_dist.py
+This script produce the distribution of delay in occurrence date and report date for a specific offense type. For example, for the crime 'RAPE', we would run:
+```
+spark-submit countuniques.py /user/YOUR_NETID/cleaned_data.csv "RAPE"
 ```
 
 ### Submission Folder
@@ -64,8 +72,3 @@ sh runall.sh
 ```
 
 which creates all the colX.out and col_counts_X.out files. 
-
-
-
-
-
