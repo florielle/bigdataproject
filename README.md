@@ -48,7 +48,7 @@ spark-submit countuniques.py /user/YOUR_NETID/cleaned_data.csv "RAPE"
 ```
 
 ### Submission Folder
-The colX.py files in the submission folder are used to generate a new table which indicates, for every row of the X column of the original dataset the base type (i.e., INT/LONG, DECIMAL, TEXT, maybe DATETIME), a semantic data type (e.g., phone, address, city, state, zipcode) and a label from the set [NULL -> missing or unknown information, VALID -> valid value from the
+The `colX.py` files in the submission folder are used to generate a new table which indicates, for every row of the X column of the original dataset the base type (i.e., INT/LONG, DECIMAL, TEXT, maybe DATETIME), a semantic data type (e.g., phone, address, city, state, zipcode) and a label from the set [NULL -> missing or unknown information, VALID -> valid value from the
 intended domain of the column, INVALID/OUTLIER -> suspicious or invalid values]. 
 
 Each script can be individualy run with 
@@ -66,7 +66,7 @@ After we ran the column scripts we use the map reduce tasks in the map_reduce fo
 ```
 and the output will be saved in `col_counts_X.out`.
 
-The entire procedure of running all the colX.py scripts and creating the counts for each column can be ran directly using the runall.sh bash script as follows
+The entire procedure of running all the `colX.py` scripts and creating the counts for each column can be ran directly using the runall.sh bash script as follows
 
 ```
 sh runall.sh
