@@ -99,3 +99,7 @@ sh runall.sh
 ```
 
 which creates all the `colX.out` and `col_counts_X.out` files. 
+
+___
+
+For further information about what each script does, please look at the comment in at the beginning of each file. 
