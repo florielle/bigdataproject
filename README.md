@@ -23,31 +23,31 @@ spark-submit SCRIPT_NAME.py /user/YOUR_NETID/cleaned_data.csv
 hfs -getmerge output.out <DESIRED_OUTPUT_FILE_NAME>
 ```
 
-#### Special Cases
+### Special Cases
 
-##### Data quality scripts
+#### Data quality scripts
 These scripts were run to check for data quality issues, and therefore should be run with the original data set.
 
-###### countuniques.py
+##### countuniques.py
 This script will count up the number of instances for each unique value in a column specified, where [column] = # of column.
 ```
 spark-submit countuniques.py /user/YOUR_NETID/<NYPD_COMPLAINT_DATA> [column]
 ```
 
-###### inspect24.py
+##### inspect24.py
 This script will count the difference in days between the start date and the end date for all rows where the start time is '24:00:00'
 ```
 spark-submit inspect24.py /user/YOUR_NETID/<NYPD_COMPLAINT_DATA>
 ```
 
-###### inspect24_0.py
+##### inspect24_0.py
 This script will count the difference in days between the start date and the end date for all rows where the start time is '24:00:00' and print out the rows where the difference in days is 0.
 ```
 spark-submit inspect24_0.py /user/YOUR_NETID/<NYPD_COMPLAINT_DATA>
 ```
 
-##### Other scripts that require additional system arguments
-###### agg2cols.py
+#### Other scripts that require additional system arguments
+##### agg2cols.py
 This script will do a groupby for two columns and then count the number of instances per group. 
 For example if we want to count the number of felonies, misdemeanors and violations (column 11) for each borough (column 13) we do:
 ```
@@ -59,7 +59,7 @@ In general, where [column_1] = # of first column and [column_2] = # of second co
 spark-submit agg2cols.py /user/YOUR_NETID/cleaned_data.csv [column_1] [column_2] 
 ```
 
-###### delay_dist.py
+##### delay_dist.py
 This script produce the distribution of delay in occurrence date and report date for a specific offense type. For example, for the crime 'RAPE', we would run:
 ```
 spark-submit countuniques.py /user/YOUR_NETID/cleaned_data.csv "RAPE"
