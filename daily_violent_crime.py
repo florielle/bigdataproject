@@ -1,3 +1,8 @@
+'''
+Same as daily_crime_counts.py but only consideres 
+violent crimes.
+'''
+
 from __future__ import print_function
 import sys
 from pyspark import SparkContext

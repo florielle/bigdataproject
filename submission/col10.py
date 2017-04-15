@@ -15,7 +15,7 @@ if __name__ == "__main__":
         lines = lines.filter(lambda x: x != first_line)
 
     def valid_code(string):
-        if string in ('ATTEMPTED', 'COMPLETED'):
+        if string.upper() in ('ATTEMPTED', 'COMPLETED'):
             return 'VALID'
         elif not string.replace(' ', ''):
             return 'NULL'

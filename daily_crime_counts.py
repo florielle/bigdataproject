@@ -1,3 +1,8 @@
+'''
+Returns the count of the number of crimes 
+aggregated by its date. 
+'''
+
 from __future__ import print_function
 import sys
 from pyspark import SparkContext

@@ -1,3 +1,8 @@
+'''
+Computes the median number of days enlapsed between occurrence and 
+report to the police aggregated by type of crime. 
+'''
+
 from __future__ import print_function
 import sys
 from pyspark import SparkContext

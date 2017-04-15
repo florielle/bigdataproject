@@ -1,3 +1,8 @@
+'''
+Same as byprecinct.py but consider only the 
+violent crimes. 
+'''
+
 from __future__ import print_function
 import sys
 from pyspark import SparkContext
@@ -17,6 +22,6 @@ if __name__ == "__main__":
     .reduceByKey(lambda x,y: x+y)\
     .sortByKey()
 
-    lines.saveAsTextFile("by_prescinct_violent.out")
+    lines.saveAsTextFile("by_precinct_violent.out")
 
     sc.stop()

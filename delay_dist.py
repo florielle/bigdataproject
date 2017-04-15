@@ -1,4 +1,8 @@
-jmw784:project$ cat delay_dist.py
+'''
+It filters by [crime_type] argument and returns the counts
+on the number of days enlapsed between occurrence and report to the police. 
+'''
+
 from __future__ import print_function
 import sys
 from pyspark import SparkContext

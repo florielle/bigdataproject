@@ -1,3 +1,8 @@
+'''
+Filters those incidents which were reported between 720 and 740
+days after occurrence. Returns the counts aggregated by type of crime. 
+'''
+
 from __future__ import print_function
 import sys
 from pyspark import SparkContext

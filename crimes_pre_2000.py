@@ -1,3 +1,8 @@
+'''
+Only considers crimes that happen previous to the year 2000
+and returns a sorted count of the descriptions of the crimes.
+'''
+
 from __future__ import print_function
 import sys
 from pyspark import SparkContext

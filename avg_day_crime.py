@@ -1,3 +1,6 @@
+'''
+Average number of crimes per day of the week
+'''
 from __future__ import print_function
 import sys
 from pyspark import SparkContext

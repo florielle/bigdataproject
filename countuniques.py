@@ -1,3 +1,7 @@
+'''
+Returns the count of each unique value in the column.
+'''
+
 from __future__ import print_function
 import sys
 from pyspark import SparkContext

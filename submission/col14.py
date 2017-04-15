@@ -16,7 +16,11 @@ if __name__ == "__main__":
 
     def valid_digit(num):
         if num.isdigit():
-            return 'VALID'    
+            n = int(num)
+            if n >= 1 and n <=123:
+                return 'VALID'    
+            else:
+                return 'INVALID'
         elif num == '':
             return 'NULL'
         else:

@@ -1,3 +1,6 @@
+'''
+Aggregates by the day of week and computes the count for each day. 
+'''
 from __future__ import print_function
 import sys
 from pyspark import SparkContext

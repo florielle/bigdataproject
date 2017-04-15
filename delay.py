@@ -1,3 +1,8 @@
+'''
+Computes the mean and std of the delay between the date in which the incident occurred
+and the date in which it was reported aggregated by type of crime. 
+'''
+
 from __future__ import print_function
 import sys
 from pyspark import SparkContext

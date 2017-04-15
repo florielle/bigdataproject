@@ -1,3 +1,7 @@
+'''
+Aggregates by the precinct in which the incident occurred
+and computes the total count per precinct.
+'''
 from __future__ import print_function
 import sys
 from pyspark import SparkContext
@@ -14,6 +18,6 @@ if __name__ == "__main__":
     .reduceByKey(lambda x,y: x+y)\
     .sortByKey()
 
-    lines.saveAsTextFile("by_prescinct.out")
+    lines.saveAsTextFile("by_precinct.out")
 
     sc.stop()

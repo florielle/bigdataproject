@@ -15,7 +15,7 @@ if __name__ == "__main__":
         lines = lines.filter(lambda x: x != first_line)
 
     def valid_boro(string):
-        if string in ('QUEENS', 'STATEN ISLAND', 'BRONX', 'BROOKLYN', 'MANHATTAN'):
+        if string.upper() in ('QUEENS', 'STATEN ISLAND', 'BRONX', 'BROOKLYN', 'MANHATTAN'):
             return 'VALID'
         elif not string.replace(' ', ''):
             return 'NULL'

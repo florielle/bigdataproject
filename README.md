@@ -47,6 +47,14 @@ This script produce the distribution of delay in occurrence date and report date
 spark-submit countuniques.py /user/YOUR_NETID/cleaned_data.csv "RAPE"
 ```
 
+##### heatmap.py
+
+Reads the [counts_file] file to get a count of some interesting factor of analysis aggregated by precinct and a geojson file with
+the counties of NYC (can be downloaded from [here](https://www1.nyc.gov/site/planning/data-maps/open-data/districts-download-metadata.page) under School, Police, Health & Fire) and returns a geojson in which each precinct is colored depending on the relative counts.
+
+```
+python heatmap.py [precinct_geojson_file] [counts_file] [output_geojson_file]
+```
 ### Submission Folder
 The `colX.py` files in the submission folder are used to generate a new table which indicates, for every row of the X column of the original dataset the base type (i.e., INT/LONG, DECIMAL, TEXT, maybe DATETIME), a semantic data type (e.g., phone, address, city, state, zipcode) and a label from the set [NULL -> missing or unknown information, VALID -> valid value from the
 intended domain of the column, INVALID/OUTLIER -> suspicious or invalid values]. 
