@@ -1,3 +1,8 @@
+'''
+Return the top ten crimes in terms of nomber of 
+occurrences
+'''
+
 from __future__ import print_function
 import sys
 from pyspark import SparkContext

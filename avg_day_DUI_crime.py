@@ -1,3 +1,7 @@
+'''
+Average number of DUI crimes reported by day of year (between 2008 and 2015)
+'''
+
 from __future__ import print_function
 import sys
 from pyspark import SparkContext
