@@ -40,6 +40,32 @@ spark-submit countuniques.py /user/YOUR_NETID/cleaned_data.csv [column]
 ```
 
 ### Submission Folder
-The .py files 
-These scripts are all run via the runall.sh bash script
+The colX.py files in the submission folder are used to generate a new table which indicates, for every row of the X column of the original dataset the base type (i.e., INT/LONG, DECIMAL, TEXT, maybe DATETIME), a semantic data type (e.g., phone, address, city, state, zipcode) and a label from the set [NULL -> missing or unknown information, VALID -> valid value from the
+intended domain of the column, INVALID/OUTLIER -> suspicious or invalid values]. 
+
+Each script can be individualy run with 
+
+```
+spark-submit [colX.py] /user/YOUR_NETID/cleaned_data.csv
+```
+
+The output will be saved in colX.out.
+
+After we ran the column scripts we use the map reduce tasks in the map_reduce folder to count the number of VALID, INVALID and NULL occurrences per column. This is done with the command
+
+```
+/usr/bin/hadoop jar /opt/cloudera/parcels/CDH-5.9.0-1.cdh5.9.0.p0.23/lib/hadoop-mapreduce/hadoop-streaming.jar -files "map_reduce/" -mapper "map_reduce/map.py" -reducer "map_reduce/reduce.py" -input [colX.out] -output [col_counts_X.out] 
+```
+
+The entire procedure of running all the colX.py scripts and creating the counts for each column can be ran directly using the runall.sh bash script as follows
+
+```
+sh runall.sh
+```
+
+which creates all the colX.out and col_counts_X.out files. 
+
+
+
+
 
