@@ -17,7 +17,7 @@ if __name__ == "__main__":
         try:
             m=datetime.strptime(day,'%m/%d/%Y').month
             y=datetime.strptime(day,'%m/%d/%Y').year
-            if y >= 2008:
+            if y >= 2006:
                 return str(m)+"-"+str(y)
             else:
                 return ''
