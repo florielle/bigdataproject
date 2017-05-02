@@ -106,7 +106,9 @@ The files in the part2 folder are for the scripts used in Part II in the project
 
 ### Data Visualization Folder
 
-The files in the data visualization folder are the Jupyter Notebooks, Excel files, and Tableau files used to create our data visualizations. 
+The files in the data visualization folder are the Jupyter Notebooks, Excel files, and Tableau files used to create our data visualizations.
+
+Some of the Excel notebooks also contain the calculations used for Part II.
 ___
 
 For further information about what each script does, please look at the comment in at the beginning of each file. 
