@@ -1,0 +1,2436 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 10200.17.0328.0755                               -->
+<workbook source-build='10.2.1 (10200.17.0328.0755)' source-platform='mac' version='10.2' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource inline='true' name='Clipboard_20170415T124707' version='10.2'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Clipboard_20170415T124707' name='Clipboard_20170415T124707leaf'>
+            <connection class='textscan' directory='/Users/joycewu/Documents/My Tableau Repository/Datasources/Clipboard_20170415T124707' />
+          </named-connection>
+        </named-connections>
+        <relation connection='Clipboard_20170415T124707leaf' name='Clipboard_20170415T124707#txt' table='[Clipboard_20170415T124707#txt]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator='&#9;'>
+            <column datatype='string' name='Col. Name' ordinal='0' />
+            <column datatype='integer' name='Valid count' ordinal='1' />
+            <column datatype='integer' name='Invalid Count' ordinal='2' />
+            <column datatype='integer' name='NULL Count' ordinal='3' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Col. Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Col. Name]</local-name>
+            <parent-name>[Clipboard_20170415T124707#txt]</parent-name>
+            <remote-alias>Col. Name</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Valid count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Valid count]</local-name>
+            <parent-name>[Clipboard_20170415T124707#txt]</parent-name>
+            <remote-alias>Valid count</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Invalid Count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Invalid Count]</local-name>
+            <parent-name>[Clipboard_20170415T124707#txt]</parent-name>
+            <remote-alias>Invalid Count</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NULL Count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[NULL Count]</local-name>
+            <parent-name>[Clipboard_20170415T124707#txt]</parent-name>
+            <remote-alias>NULL Count</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Clipboard_20170415T124707#txt]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;\\t&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='record-delimiter'>&quot;\\r&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.443463' measure-ordering='alphabetic' measure-percentage='0.556537' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='Clipboard_20170415T124707' />
+          </datasources>
+          <datasource-dependencies datasource='Clipboard_20170415T124707'>
+            <column datatype='string' name='[Col. Name]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Invalid Count]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[NULL Count]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Valid count]' role='measure' type='quantitative' />
+            <column-instance column='[Col. Name]' derivation='None' name='[none:Col. Name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Invalid Count]' derivation='Sum' name='[sum:Invalid Count:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[NULL Count]' derivation='Sum' name='[sum:NULL Count:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Valid count]' derivation='Sum' name='[sum:Valid count:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <sort class='manual' column='[Clipboard_20170415T124707].[none:Col. Name:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;CMPLNT_NUM&quot;</bucket>
+              <bucket>&quot;CMPLNT_FR_DT&quot;</bucket>
+              <bucket>&quot;CMPLNT_FR_TM&quot;</bucket>
+              <bucket>&quot;CMPLNT_TO_DT&quot;</bucket>
+              <bucket>&quot;CMPLNT_TO_TM&quot;</bucket>
+              <bucket>&quot;RPT_DT&quot;</bucket>
+              <bucket>&quot;KY_CD&quot;</bucket>
+              <bucket>&quot;OFNS_DESC&quot;</bucket>
+              <bucket>&quot;PD_CD&quot;</bucket>
+              <bucket>&quot;PD_DESC&quot;</bucket>
+              <bucket>&quot;CRM_ATPT_CPTD_CD&quot;</bucket>
+              <bucket>&quot;LAW_CAT_CD&quot;</bucket>
+              <bucket>&quot;JURIS_DESC&quot;</bucket>
+              <bucket>&quot;BORO_NM&quot;</bucket>
+              <bucket>&quot;ADDR_PCT_CD&quot;</bucket>
+              <bucket>&quot;LOC_OF_OCCUR_DESC&quot;</bucket>
+              <bucket>&quot;PREM_TYP_DESC&quot;</bucket>
+              <bucket>&quot;PARKS_NM&quot;</bucket>
+              <bucket>&quot;HADEVELOPT&quot;</bucket>
+              <bucket>&quot;X_COORD_CD&quot;</bucket>
+              <bucket>&quot;Y_COORD_CD&quot;</bucket>
+              <bucket>&quot;Latitude&quot;</bucket>
+              <bucket>&quot;Longitude&quot;</bucket>
+            </dictionary>
+          </sort>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='1' x-axis-name='[Clipboard_20170415T124707].[sum:Invalid Count:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#e15759' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' x-axis-name='[Clipboard_20170415T124707].[sum:NULL Count:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#606b76' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='3' x-axis-name='[Clipboard_20170415T124707].[sum:Valid count:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#72b966' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[Clipboard_20170415T124707].[none:Col. Name:nk]</rows>
+        <cols>([Clipboard_20170415T124707].[sum:Valid count:qk] + ([Clipboard_20170415T124707].[sum:Invalid Count:qk] + [Clipboard_20170415T124707].[sum:NULL Count:qk]))</cols>
+        <mark-labels>
+          <mark-label id='0' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Longitude&quot;</value>
+                <value>0</value>
+                <value>188146</value>
+                <value>4913085</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='1' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Latitude&quot;</value>
+                <value>0</value>
+                <value>188146</value>
+                <value>4913085</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='2' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Y_COORD_CD&quot;</value>
+                <value>0</value>
+                <value>188146</value>
+                <value>4913085</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='3' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;X_COORD_CD&quot;</value>
+                <value>0</value>
+                <value>188146</value>
+                <value>4913085</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='4' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PREM_TYP_DESC&quot;</value>
+                <value>0</value>
+                <value>33279</value>
+                <value>5067952</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='5' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;LOC_OF_OCCUR_DESC&quot;</value>
+                <value>0</value>
+                <value>1127341</value>
+                <value>3973890</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='6' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;ADDR_PCT_CD&quot;</value>
+                <value>0</value>
+                <value>390</value>
+                <value>5100841</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='7' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;BORO_NM&quot;</value>
+                <value>0</value>
+                <value>463</value>
+                <value>5100768</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='8' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;JURIS_DESC&quot;</value>
+                <value>0</value>
+                <value>0</value>
+                <value>5101231</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='9' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;LAW_CAT_CD&quot;</value>
+                <value>0</value>
+                <value>0</value>
+                <value>5101231</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='10' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;CRM_ATPT_CPTD_CD&quot;</value>
+                <value>0</value>
+                <value>7</value>
+                <value>5101224</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='11' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PD_DESC&quot;</value>
+                <value>0</value>
+                <value>4574</value>
+                <value>5096657</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='12' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PD_CD&quot;</value>
+                <value>0</value>
+                <value>4574</value>
+                <value>5096657</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='13' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;OFNS_DESC&quot;</value>
+                <value>0</value>
+                <value>18840</value>
+                <value>5082391</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='14' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;KY_CD&quot;</value>
+                <value>0</value>
+                <value>0</value>
+                <value>5101231</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='15' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;RPT_DT&quot;</value>
+                <value>0</value>
+                <value>0</value>
+                <value>5101231</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='16' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;CMPLNT_TO_TM&quot;</value>
+                <value>1380</value>
+                <value>1387785</value>
+                <value>3712066</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='17' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;CMPLNT_TO_DT&quot;</value>
+                <value>32</value>
+                <value>1391478</value>
+                <value>3709721</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='18' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;CMPLNT_FR_TM&quot;</value>
+                <value>907</value>
+                <value>48</value>
+                <value>5100276</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='19' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;CMPLNT_FR_DT&quot;</value>
+                <value>38</value>
+                <value>655</value>
+                <value>5100538</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='20' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;CMPLNT_NUM&quot;</value>
+                <value>0</value>
+                <value>0</value>
+                <value>5101231</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='21' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;HADEVELOPT&quot;</value>
+                <value>0</value>
+                <value>4848026</value>
+                <value>253205</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='22' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PARKS_NM&quot;</value>
+                <value>0</value>
+                <value>5093632</value>
+                <value>7599</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='23' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Longitude&quot;</value>
+                <value>0</value>
+                <value>188146</value>
+                <value>4913085</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='24' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Latitude&quot;</value>
+                <value>0</value>
+                <value>188146</value>
+                <value>4913085</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='25' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Y_COORD_CD&quot;</value>
+                <value>0</value>
+                <value>188146</value>
+                <value>4913085</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='26' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;X_COORD_CD&quot;</value>
+                <value>0</value>
+                <value>188146</value>
+                <value>4913085</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='27' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;HADEVELOPT&quot;</value>
+                <value>0</value>
+                <value>4848026</value>
+                <value>253205</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='28' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PARKS_NM&quot;</value>
+                <value>0</value>
+                <value>5093632</value>
+                <value>7599</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='29' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PREM_TYP_DESC&quot;</value>
+                <value>0</value>
+                <value>33279</value>
+                <value>5067952</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='30' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;LOC_OF_OCCUR_DESC&quot;</value>
+                <value>0</value>
+                <value>1127341</value>
+                <value>3973890</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='31' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;ADDR_PCT_CD&quot;</value>
+                <value>0</value>
+                <value>390</value>
+                <value>5100841</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='32' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;BORO_NM&quot;</value>
+                <value>0</value>
+                <value>463</value>
+                <value>5100768</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='33' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;JURIS_DESC&quot;</value>
+                <value>0</value>
+                <value>0</value>
+                <value>5101231</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='34' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;LAW_CAT_CD&quot;</value>
+                <value>0</value>
+                <value>0</value>
+                <value>5101231</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='35' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;CRM_ATPT_CPTD_CD&quot;</value>
+                <value>0</value>
+                <value>7</value>
+                <value>5101224</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='36' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PD_DESC&quot;</value>
+                <value>0</value>
+                <value>4574</value>
+                <value>5096657</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='37' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PD_CD&quot;</value>
+                <value>0</value>
+                <value>4574</value>
+                <value>5096657</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='38' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;OFNS_DESC&quot;</value>
+                <value>0</value>
+                <value>18840</value>
+                <value>5082391</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='39' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;KY_CD&quot;</value>
+                <value>0</value>
+                <value>0</value>
+                <value>5101231</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='40' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;RPT_DT&quot;</value>
+                <value>0</value>
+                <value>0</value>
+                <value>5101231</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='41' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;CMPLNT_TO_TM&quot;</value>
+                <value>1380</value>
+                <value>1387785</value>
+                <value>3712066</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='42' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;CMPLNT_TO_DT&quot;</value>
+                <value>32</value>
+                <value>1391478</value>
+                <value>3709721</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='43' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;CMPLNT_FR_TM&quot;</value>
+                <value>907</value>
+                <value>48</value>
+                <value>5100276</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='44' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;CMPLNT_FR_DT&quot;</value>
+                <value>38</value>
+                <value>655</value>
+                <value>5100538</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='45' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;CMPLNT_NUM&quot;</value>
+                <value>0</value>
+                <value>0</value>
+                <value>5101231</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='46' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Longitude&quot;</value>
+                <value>0</value>
+                <value>188146</value>
+                <value>4913085</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='47' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Latitude&quot;</value>
+                <value>0</value>
+                <value>188146</value>
+                <value>4913085</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='48' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Y_COORD_CD&quot;</value>
+                <value>0</value>
+                <value>188146</value>
+                <value>4913085</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='49' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;X_COORD_CD&quot;</value>
+                <value>0</value>
+                <value>188146</value>
+                <value>4913085</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='50' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;HADEVELOPT&quot;</value>
+                <value>0</value>
+                <value>4848026</value>
+                <value>253205</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='51' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PARKS_NM&quot;</value>
+                <value>0</value>
+                <value>5093632</value>
+                <value>7599</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='52' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PREM_TYP_DESC&quot;</value>
+                <value>0</value>
+                <value>33279</value>
+                <value>5067952</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='53' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;LOC_OF_OCCUR_DESC&quot;</value>
+                <value>0</value>
+                <value>1127341</value>
+                <value>3973890</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='54' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;ADDR_PCT_CD&quot;</value>
+                <value>0</value>
+                <value>390</value>
+                <value>5100841</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='55' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;BORO_NM&quot;</value>
+                <value>0</value>
+                <value>463</value>
+                <value>5100768</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='56' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;JURIS_DESC&quot;</value>
+                <value>0</value>
+                <value>0</value>
+                <value>5101231</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='57' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;LAW_CAT_CD&quot;</value>
+                <value>0</value>
+                <value>0</value>
+                <value>5101231</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='58' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;CRM_ATPT_CPTD_CD&quot;</value>
+                <value>0</value>
+                <value>7</value>
+                <value>5101224</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='59' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PD_DESC&quot;</value>
+                <value>0</value>
+                <value>4574</value>
+                <value>5096657</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='60' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PD_CD&quot;</value>
+                <value>0</value>
+                <value>4574</value>
+                <value>5096657</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='61' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;OFNS_DESC&quot;</value>
+                <value>0</value>
+                <value>18840</value>
+                <value>5082391</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='62' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;KY_CD&quot;</value>
+                <value>0</value>
+                <value>0</value>
+                <value>5101231</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='63' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;RPT_DT&quot;</value>
+                <value>0</value>
+                <value>0</value>
+                <value>5101231</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='64' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;CMPLNT_TO_TM&quot;</value>
+                <value>1380</value>
+                <value>1387785</value>
+                <value>3712066</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='65' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;CMPLNT_TO_DT&quot;</value>
+                <value>32</value>
+                <value>1391478</value>
+                <value>3709721</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='66' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;CMPLNT_FR_TM&quot;</value>
+                <value>907</value>
+                <value>48</value>
+                <value>5100276</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='67' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;CMPLNT_FR_DT&quot;</value>
+                <value>38</value>
+                <value>655</value>
+                <value>5100538</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='68' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Invalid Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:NULL Count:qk]</field>
+                  <field>[Clipboard_20170415T124707].[sum:Valid count:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;CMPLNT_NUM&quot;</value>
+                <value>0</value>
+                <value>0</value>
+                <value>5101231</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+        </mark-labels>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[Clipboard_20170415T124707].[:Measure Names]</field>
+            <field>[Clipboard_20170415T124707].[none:Col. Name:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>

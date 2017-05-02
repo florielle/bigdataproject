@@ -1,0 +1,3060 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 10200.17.0328.0755                               -->
+<workbook source-build='10.2.1 (10200.17.0328.0755)' source-platform='mac' version='10.2' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource inline='true' name='Clipboard_20170502T005657' version='10.2'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Clipboard_20170502T005657' name='Clipboard_20170502T005657leaf'>
+            <connection class='textscan' directory='/Users/joycewu/Documents/My Tableau Repository/Datasources/Clipboard_20170502T005657' />
+          </named-connection>
+        </named-connections>
+        <relation connection='Clipboard_20170502T005657leaf' name='Clipboard_20170502T005657#txt' table='[Clipboard_20170502T005657#txt]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator='&#9;'>
+            <column datatype='string' name='Store type' ordinal='0' />
+            <column datatype='string' name='Shoplifting type' ordinal='1' />
+            <column datatype='integer' name='Counts' ordinal='2' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Store type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Store type]</local-name>
+            <parent-name>[Clipboard_20170502T005657#txt]</parent-name>
+            <remote-alias>Store type</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shoplifting type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Shoplifting type]</local-name>
+            <parent-name>[Clipboard_20170502T005657#txt]</parent-name>
+            <remote-alias>Shoplifting type</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Counts</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Counts]</local-name>
+            <parent-name>[Clipboard_20170502T005657#txt]</parent-name>
+            <remote-alias>Counts</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Clipboard_20170502T005657#txt]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;\\t&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='record-delimiter'>&quot;\\r&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='string' name='[Shoplifting type]' role='dimension' type='nominal' />
+      <column-instance column='[Shoplifting type]' derivation='None' name='[none:Shoplifting type:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.501767' measure-ordering='alphabetic' measure-percentage='0.498233' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Shoplifting type:nk]' type='palette'>
+            <map to='#b07aa1'>
+              <bucket>&quot;GRAND LARCENY&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;ROBBERY, BEGAN AS SHOPLIFTING&quot;</bucket>
+            </map>
+            <map to='#ffbed1'>
+              <bucket>&quot;PETIT LARCENY&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Counts'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Counts</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='Clipboard_20170502T005657' />
+          </datasources>
+          <datasource-dependencies datasource='Clipboard_20170502T005657'>
+            <column datatype='integer' name='[Counts]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Shoplifting type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Store type]' role='dimension' type='nominal' />
+            <column-instance column='[Shoplifting type]' derivation='None' name='[none:Shoplifting type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Store type]' derivation='None' name='[none:Store type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Counts]' derivation='Sum' name='[sum:Counts:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <sort class='computed' column='[Clipboard_20170502T005657].[none:Store type:nk]' direction='DESC' using='[Clipboard_20170502T005657].[sum:Counts:qk]' />
+          <filter class='quantitative' column='[Clipboard_20170502T005657].[sum:Counts:qk]' included-values='in-range'>
+            <min>50</min>
+            <max>65264</max>
+          </filter>
+          <slices>
+            <column>[Clipboard_20170502T005657].[sum:Counts:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[Clipboard_20170502T005657].[none:Shoplifting type:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[Clipboard_20170502T005657].[none:Store type:nk]</rows>
+        <cols>[Clipboard_20170502T005657].[sum:Counts:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Percent petit/grand larceny'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Percentage</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='Clipboard_20170502T005657' />
+          </datasources>
+          <datasource-dependencies datasource='Clipboard_20170502T005657'>
+            <column datatype='integer' name='[Counts]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Shoplifting type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Store type]' role='dimension' type='nominal' />
+            <column-instance column='[Shoplifting type]' derivation='None' name='[none:Shoplifting type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Store type]' derivation='None' name='[none:Store type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Counts]' derivation='Sum' name='[pcto:sum:Counts:qk:2]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Counts]' derivation='Sum' name='[sum:Counts:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <sort class='computed' column='[Clipboard_20170502T005657].[none:Store type:nk]' direction='DESC' using='[Clipboard_20170502T005657].[sum:Counts:qk]' />
+          <filter class='quantitative' column='[Clipboard_20170502T005657].[sum:Counts:qk]' included-values='in-range'>
+            <min>50</min>
+            <max>65264</max>
+          </filter>
+          <slices>
+            <column>[Clipboard_20170502T005657].[sum:Counts:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[Clipboard_20170502T005657].[none:Shoplifting type:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[Clipboard_20170502T005657].[none:Store type:nk]</rows>
+        <cols>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</cols>
+        <mark-labels>
+          <mark-label id='0' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;STORAGE FACILITY&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='1' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;RESIDENCE-HOUSE&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='2' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;PHOTO/COPY&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='3' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;PUBLIC BUILDING&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='4' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;CHECK CASHING BUSINESS&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='5' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;DOCTOR/DENTIST OFFICE&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='6' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;BUS TERMINAL&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='7' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;TRANSIT - NYC SUBWAY&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='8' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;RESIDENCE - PUBLIC HOUSING&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='9' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;RESIDENCE - APT. HOUSE&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='10' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;FACTORY/WAREHOUSE&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='11' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;DRY CLEANER/LAUNDRY&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='12' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;AIRPORT TERMINAL&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='13' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;FAST FOOD&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='14' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;RESTAURANT/DINER&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='15' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>%null%</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='16' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;VIDEO STORE&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='17' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;STREET&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='18' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;BOOK/CARD&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='19' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;BEAUTY &amp; NAIL SALON&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='20' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;OTHER&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='21' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;LIQUOR STORE&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='22' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;JEWELRY&quot;</value>
+                <value>0.42839951865222625</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='23' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;GAS STATION&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='24' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;CANDY STORE&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='25' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;SHOE&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='26' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;VARIETY STORE&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='27' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;SMALL MERCHANT&quot;</value>
+                <value>0.90706023135221381</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='28' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;TELECOMM. STORE&quot;</value>
+                <value>0.85865058424425178</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='29' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;STORE UNCLASSIFIED&quot;</value>
+                <value>0.94300626304801671</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='30' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;GROCERY/BODEGA&quot;</value>
+                <value>0.98920510304219822</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='31' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;COMMERCIAL BUILDING&quot;</value>
+                <value>0.91458466794789661</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='32' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;FOOD SUPERMARKET&quot;</value>
+                <value>0.99529861162124444</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='33' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;CLOTHING/BOUTIQUE&quot;</value>
+                <value>0.88235048968535112</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='34' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;DRUG STORE&quot;</value>
+                <value>0.96771823858303063</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='35' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;CHAIN STORE&quot;</value>
+                <value>0.95145701096364688</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='36' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;DEPARTMENT STORE&quot;</value>
+                <value>0.9509959636877614</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='37' label-state='off'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;JEWELRY&quot;</value>
+                <value>0.57160048134777375</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='38' label-state='off'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;SMALL MERCHANT&quot;</value>
+                <value>0.092939768647786192</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='39' label-state='off'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;TELECOMM. STORE&quot;</value>
+                <value>0.14134941575574822</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='40' label-state='off'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;STORE UNCLASSIFIED&quot;</value>
+                <value>0.056993736951983301</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='41' label-state='off'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;GROCERY/BODEGA&quot;</value>
+                <value>0.010794896957801767</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='42' label-state='off'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;COMMERCIAL BUILDING&quot;</value>
+                <value>0.085415332052103346</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='43' label-state='off'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;FOOD SUPERMARKET&quot;</value>
+                <value>0.0047013883787556015</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='44' label-state='off'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;CLOTHING/BOUTIQUE&quot;</value>
+                <value>0.11764951031464889</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='45' label-state='off'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;DRUG STORE&quot;</value>
+                <value>0.032281761416969354</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='46' label-state='off'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;CHAIN STORE&quot;</value>
+                <value>0.048542989036353144</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='47' label-state='off'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;DEPARTMENT STORE&quot;</value>
+                <value>0.049004036312238625</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+        </mark-labels>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='Counts'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[Clipboard_20170502T005657].[none:Shoplifting type:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+            <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' maximized='true' name='Percent petit/grand larceny'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+          <strip size='160'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[Clipboard_20170502T005657].[none:Shoplifting type:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <tuple-selection>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;STORAGE FACILITY&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;RESIDENCE-HOUSE&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;PHOTO/COPY&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;PUBLIC BUILDING&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;CHECK CASHING BUSINESS&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;DOCTOR/DENTIST OFFICE&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;BUS TERMINAL&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;TRANSIT - NYC SUBWAY&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;RESIDENCE - PUBLIC HOUSING&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;RESIDENCE - APT. HOUSE&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;FACTORY/WAREHOUSE&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;DRY CLEANER/LAUNDRY&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;AIRPORT TERMINAL&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;FAST FOOD&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;RESTAURANT/DINER&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>%null%</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;VIDEO STORE&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;STREET&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;BOOK/CARD&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;BEAUTY &amp; NAIL SALON&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;OTHER&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;LIQUOR STORE&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;JEWELRY&quot;</value>
+                <value>0.42839951865222625</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;GAS STATION&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;CANDY STORE&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;SHOE&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;VARIETY STORE&quot;</value>
+                <value>1.0</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;SMALL MERCHANT&quot;</value>
+                <value>0.90706023135221381</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;TELECOMM. STORE&quot;</value>
+                <value>0.85865058424425178</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;STORE UNCLASSIFIED&quot;</value>
+                <value>0.94300626304801671</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;GROCERY/BODEGA&quot;</value>
+                <value>0.98920510304219822</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;COMMERCIAL BUILDING&quot;</value>
+                <value>0.91458466794789661</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;FOOD SUPERMARKET&quot;</value>
+                <value>0.99529861162124444</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;CLOTHING/BOUTIQUE&quot;</value>
+                <value>0.88235048968535112</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;DRUG STORE&quot;</value>
+                <value>0.96771823858303063</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;CHAIN STORE&quot;</value>
+                <value>0.95145701096364688</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;PETIT LARCENY&quot;</value>
+                <value>&quot;DEPARTMENT STORE&quot;</value>
+                <value>0.9509959636877614</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;JEWELRY&quot;</value>
+                <value>0.57160048134777375</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;SMALL MERCHANT&quot;</value>
+                <value>0.092939768647786192</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;TELECOMM. STORE&quot;</value>
+                <value>0.14134941575574822</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;STORE UNCLASSIFIED&quot;</value>
+                <value>0.056993736951983301</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;GROCERY/BODEGA&quot;</value>
+                <value>0.010794896957801767</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;COMMERCIAL BUILDING&quot;</value>
+                <value>0.085415332052103346</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;FOOD SUPERMARKET&quot;</value>
+                <value>0.0047013883787556015</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;CLOTHING/BOUTIQUE&quot;</value>
+                <value>0.11764951031464889</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;DRUG STORE&quot;</value>
+                <value>0.032281761416969354</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;CHAIN STORE&quot;</value>
+                <value>0.048542989036353144</value>
+              </tuple>
+            </tuple-reference>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+                  <field>[Clipboard_20170502T005657].[pcto:sum:Counts:qk:2]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;GRAND LARCENY&quot;</value>
+                <value>&quot;DEPARTMENT STORE&quot;</value>
+                <value>0.049004036312238625</value>
+              </tuple>
+            </tuple-reference>
+          </tuple-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[Clipboard_20170502T005657].[none:Shoplifting type:nk]</field>
+            <field>[Clipboard_20170502T005657].[none:Store type:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Counts' width='192'>
+      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
+      gg==
+    </thumbnail>
+    <thumbnail height='192' name='Percent petit/grand larceny' width='192'>
+      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
+      34tAAAAAAElFTkSuQmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>

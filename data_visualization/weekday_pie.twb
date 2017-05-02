@@ -1,0 +1,745 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 10200.17.0328.0755                               -->
+<workbook source-build='10.2.1 (10200.17.0328.0755)' source-platform='mac' version='10.2' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource inline='true' name='Clipboard_20170414T230500' version='10.2'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Clipboard_20170414T230500' name='Clipboard_20170414T230500leaf'>
+            <connection class='textscan' directory='/Users/joycewu/Documents/My Tableau Repository/Datasources/Clipboard_20170414T230500' />
+          </named-connection>
+        </named-connections>
+        <relation connection='Clipboard_20170414T230500leaf' name='Clipboard_20170414T230500#txt' table='[Clipboard_20170414T230500#txt]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator='&#9;'>
+            <column datatype='string' name='Day of week' ordinal='0' />
+            <column datatype='integer' name='Total Counts of Crime' ordinal='1' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Day of week</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Day of week]</local-name>
+            <parent-name>[Clipboard_20170414T230500#txt]</parent-name>
+            <remote-alias>Day of week</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Total Counts of Crime</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Total Counts of Crime]</local-name>
+            <parent-name>[Clipboard_20170414T230500#txt]</parent-name>
+            <remote-alias>Total Counts of Crime</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Clipboard_20170414T230500#txt]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;\\t&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='record-delimiter'>&quot;\\r&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <column datatype='string' name='[Day of week]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column-instance column='[Day of week]' derivation='None' name='[none:Day of week:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.480565' measure-ordering='alphabetic' measure-percentage='0.519435' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Day of week:nk]' palette='cyclic_10_0' type='palette'>
+            <map to='#1ba3c6'>
+              <bucket>&quot;Sunday&quot;</bucket>
+            </map>
+            <map to='#1fae81'>
+              <bucket>&quot;Monday&quot;</bucket>
+            </map>
+            <map to='#4f7cba'>
+              <bucket>&quot;Saturday&quot;</bucket>
+            </map>
+            <map to='#bcbd22'>
+              <bucket>&quot;Tuesday&quot;</bucket>
+            </map>
+            <map to='#d669be'>
+              <bucket>&quot;Friday&quot;</bucket>
+            </map>
+            <map to='#f43c63'>
+              <bucket>&quot;Thursday&quot;</bucket>
+            </map>
+            <map to='#f88113'>
+              <bucket>&quot;Wednesday&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='Clipboard_20170414T230500' />
+          </datasources>
+          <datasource-dependencies datasource='Clipboard_20170414T230500'>
+            <column datatype='string' name='[Day of week]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Total Counts of Crime]' role='measure' type='quantitative' />
+            <column-instance column='[Day of week]' derivation='None' name='[none:Day of week:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Total Counts of Crime]' derivation='Sum' name='[pcto:sum:Total Counts of Crime:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Total Counts of Crime]' derivation='Sum' name='[sum:Total Counts of Crime:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='annotation'>
+            <format attr='fill-color' id='annotation_7' value='#00000000' />
+            <format attr='fill-color' id='annotation_8' value='#00000000' />
+            <format attr='fill-color' id='annotation_9' value='#00000000' />
+            <format attr='fill-color' id='annotation_10' value='#00000000' />
+            <format attr='fill-color' id='annotation_11' value='#00000000' />
+            <format attr='fill-color' id='annotation_12' value='#00000000' />
+            <format attr='fill-color' id='annotation_13' value='#00000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[Clipboard_20170414T230500].[none:Day of week:nk]' />
+              <wedge-size column='[Clipboard_20170414T230500].[pcto:sum:Total Counts of Crime:qk]' />
+              <size column='[Clipboard_20170414T230500].[sum:Total Counts of Crime:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.8570718765258789' />
+                <format attr='mark-transparency' value='224' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+        <mark-labels>
+          <mark-label id='0' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields />
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170414T230500].[none:Day of week:nk]</field>
+                  <field>[Clipboard_20170414T230500].[sum:Total Counts of Crime:qk]</field>
+                  <field>[Clipboard_20170414T230500].[pcto:sum:Total Counts of Crime:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Sunday&quot;</value>
+                <value>656790</value>
+                <value>0.12876780975325139</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='1' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields />
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170414T230500].[none:Day of week:nk]</field>
+                  <field>[Clipboard_20170414T230500].[sum:Total Counts of Crime:qk]</field>
+                  <field>[Clipboard_20170414T230500].[pcto:sum:Total Counts of Crime:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Monday&quot;</value>
+                <value>683591</value>
+                <value>0.134022314342537</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='2' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields />
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170414T230500].[none:Day of week:nk]</field>
+                  <field>[Clipboard_20170414T230500].[sum:Total Counts of Crime:qk]</field>
+                  <field>[Clipboard_20170414T230500].[pcto:sum:Total Counts of Crime:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Tuesday&quot;</value>
+                <value>733142</value>
+                <value>0.14373709949621377</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='3' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields />
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170414T230500].[none:Day of week:nk]</field>
+                  <field>[Clipboard_20170414T230500].[sum:Total Counts of Crime:qk]</field>
+                  <field>[Clipboard_20170414T230500].[pcto:sum:Total Counts of Crime:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Wednesday&quot;</value>
+                <value>752639</value>
+                <value>0.14755960895396911</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='4' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields />
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170414T230500].[none:Day of week:nk]</field>
+                  <field>[Clipboard_20170414T230500].[sum:Total Counts of Crime:qk]</field>
+                  <field>[Clipboard_20170414T230500].[pcto:sum:Total Counts of Crime:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Thursday&quot;</value>
+                <value>743876</value>
+                <value>0.14584156769745221</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='5' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields />
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170414T230500].[none:Day of week:nk]</field>
+                  <field>[Clipboard_20170414T230500].[sum:Total Counts of Crime:qk]</field>
+                  <field>[Clipboard_20170414T230500].[pcto:sum:Total Counts of Crime:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Friday&quot;</value>
+                <value>792867</value>
+                <value>0.15544656132954396</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='6' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields />
+                </pane-descriptor>
+                <columns>
+                  <field>[Clipboard_20170414T230500].[none:Day of week:nk]</field>
+                  <field>[Clipboard_20170414T230500].[sum:Total Counts of Crime:qk]</field>
+                  <field>[Clipboard_20170414T230500].[pcto:sum:Total Counts of Crime:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Saturday&quot;</value>
+                <value>737671</value>
+                <value>0.14462503842703256</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+        </mark-labels>
+        <annotations>
+          <annotation class='area' id='7' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
+            <formatted-text>
+              <run bold='true' fontcolor='#ffffff'>Monday</run>
+              <run fontcolor='#ffffff'>&#10;683,591</run>
+            </formatted-text>
+            <top-left>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.643508'>
+                  <node-reference />
+                </x-coord>
+                <y-coord cell-offset='0.292308'>
+                  <node-reference />
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </top-left>
+            <bottom-right>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.757403'>
+                  <node-reference />
+                </x-coord>
+                <y-coord cell-offset='0.464957'>
+                  <node-reference />
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </bottom-right>
+            <text x='0.5' y='0.5' />
+          </annotation>
+          <annotation class='area' id='8' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
+            <formatted-text>
+              <run bold='true' fontcolor='#ffffff'>Sunday</run>
+              <run fontcolor='#ffffff'>&#10;656,790</run>
+            </formatted-text>
+            <top-left>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.515945'>
+                  <node-reference />
+                </x-coord>
+                <y-coord cell-offset='0.176068'>
+                  <node-reference />
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </top-left>
+            <bottom-right>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.629841'>
+                  <node-reference />
+                </x-coord>
+                <y-coord cell-offset='0.347009'>
+                  <node-reference />
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </bottom-right>
+            <text x='0.5' y='0.5' />
+          </annotation>
+          <annotation class='area' id='9' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
+            <formatted-text>
+              <run bold='true' fontcolor='#ffffff'>Tuesday</run>
+              <run fontcolor='#ffffff'>&#10;733,142</run>
+            </formatted-text>
+            <top-left>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.627563'>
+                  <node-reference />
+                </x-coord>
+                <y-coord cell-offset='0.535043'>
+                  <node-reference />
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </top-left>
+            <bottom-right>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.741458'>
+                  <node-reference />
+                </x-coord>
+                <y-coord cell-offset='0.705983'>
+                  <node-reference />
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </bottom-right>
+            <text x='0.5' y='0.5' />
+          </annotation>
+          <annotation class='area' id='10' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
+            <formatted-text>
+              <run bold='true' fontcolor='#ffffff'>Wednesday</run>
+              <run fontcolor='#ffffff'>&#10;752,639</run>
+              <run>Æ&#10;</run>
+            </formatted-text>
+            <top-left>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.46697'>
+                  <node-reference />
+                </x-coord>
+                <y-coord cell-offset='0.702564'>
+                  <node-reference />
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </top-left>
+            <bottom-right>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.580866'>
+                  <node-reference />
+                </x-coord>
+                <y-coord cell-offset='0.873504'>
+                  <node-reference />
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </bottom-right>
+            <text x='0.5' y='0.5' />
+          </annotation>
+          <annotation class='area' id='11' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
+            <formatted-text>
+              <run bold='true' fontcolor='#ffffff'>Thursday</run>
+              <run fontcolor='#ffffff'>&#10;743,876</run>
+            </formatted-text>
+            <top-left>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.290433'>
+                  <node-reference />
+                </x-coord>
+                <y-coord cell-offset='0.596581'>
+                  <node-reference />
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </top-left>
+            <bottom-right>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.404328'>
+                  <node-reference />
+                </x-coord>
+                <y-coord cell-offset='0.767521'>
+                  <node-reference />
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </bottom-right>
+            <text x='0.5' y='0.5' />
+          </annotation>
+          <annotation class='area' id='12' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
+            <formatted-text>
+              <run bold='true' fontcolor='#ffffff'>Friday</run>
+              <run fontcolor='#ffffff'>&#10;792,867</run>
+            </formatted-text>
+            <top-left>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.273349'>
+                  <node-reference />
+                </x-coord>
+                <y-coord cell-offset='0.389744'>
+                  <node-reference />
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </top-left>
+            <bottom-right>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.387244'>
+                  <node-reference />
+                </x-coord>
+                <y-coord cell-offset='0.560684'>
+                  <node-reference />
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </bottom-right>
+            <text x='0.5' y='0.5' />
+          </annotation>
+          <annotation class='area' id='13' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
+            <formatted-text>
+              <run bold='true' fontcolor='#ffffff'>Saturday</run>
+              <run fontcolor='#ffffff'>&#10;737,671</run>
+            </formatted-text>
+            <top-left>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.367882'>
+                  <node-reference />
+                </x-coord>
+                <y-coord cell-offset='0.188034'>
+                  <node-reference />
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </top-left>
+            <bottom-right>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.481777'>
+                  <node-reference />
+                </x-coord>
+                <y-coord cell-offset='0.358974'>
+                  <node-reference />
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </bottom-right>
+            <text x='0.5' y='0.5' />
+          </annotation>
+        </annotations>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card type='title' />
+            <card pane-specification-id='0' param='[Clipboard_20170414T230500].[none:Day of week:nk]' type='color' />
+            <card pane-specification-id='0' param='[Clipboard_20170414T230500].[sum:Total Counts of Crime:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[Clipboard_20170414T230500].[none:Day of week:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+      dw7g0tD8f73Q21ree2QhAAAAAElFTkSuQmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>
