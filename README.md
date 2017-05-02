@@ -100,6 +100,13 @@ sh runall.sh
 
 which creates all the `colX.out` and `col_counts_X.out` files. 
 
+### Part II Folder
+
+The files in the part2 folder are for the scripts used in Part II in the project. These may be run on different data files, please view the README within the part 2 folder for specific instructions.
+
+### Data Visualization Folder
+
+The files in the data visualization folder are the Jupyter Notebooks used to create our data visualizations.
 ___
 
 For further information about what each script does, please look at the comment in at the beginning of each file. 
