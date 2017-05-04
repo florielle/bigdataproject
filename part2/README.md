@@ -8,3 +8,8 @@ All data for this part of the project have been uploaded to Dropbox and can be a
 spark-submit SCRIPT_NAME.py weather.tsv
 ```
 
+### Other Scripts
+`avg_day_noise_complaints.py` is to be run on noise complaint filtered 311 Complaint data can be run with the following command:
+```
+spark-submit avg_day_noise_complaints.py noise_complaints.csv
+```
