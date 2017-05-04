@@ -21,7 +21,7 @@ if __name__ == "__main__":
             return ''
 
     lines = lines.mapPartitions(lambda x: reader(x))\
-    .map(lambda x: (x[1], 1))\
+    .map(lambda x: (x[1][:10], 1))\
     .reduceByKey(lambda x,y: x+y)\
     .map(lambda x: (day_of_complaint(x[0]), (x[1], 1)))\
     .reduceByKey(lambda x,y: (x[0]+y[0], x[1]+y[1]))\
