@@ -30,4 +30,3 @@ if __name__ == "__main__":
     lines.saveAsTextFile("avg_day_noise_complaints.out")
 
     sc.stop()
-
