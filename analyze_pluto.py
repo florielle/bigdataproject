@@ -18,6 +18,7 @@ files = ['BX13V1.csv', 'SI14v1.csv', 'QN13V1.csv', 'BX09v1.csv', 'MN13v2.csv', '
 
 # Assumes the files are in ./data/PLUTO
 files = ['./data/PLUTO/' + f for f in files]
+sc = SparkContext()
 
 def grab_columns(x, columns):
     returnlist = []
@@ -52,7 +53,7 @@ def process_file(filename):
 
 
 if __name__ == "__main__":
-    sc = SparkContext()
+    
 
     newlines = process_file(files[0])
     
