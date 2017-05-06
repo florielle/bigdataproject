@@ -27,7 +27,10 @@ def grab_columns(x, columns):
             if '\0' in x[c]:
                 returnlist.append('NULL')
             else:
-                returnlist.append(int(x[c]))
+                if x[c] == 0:
+                    returnlist.append('NULL')
+                else:
+                    returnlist.append(int(x[c]))
         except:
             returnlist.append('NULL')
     return returnlist
@@ -45,9 +48,10 @@ def process_file(filename):
     header = [h.replace('"', '') for h in header]
     value_ix = header.index('AssessTot')
     precinct_ix = header.index('PolicePrct')
-    newlines = lines.map(lambda x: [int(year)] + grab_columns(x, [precinct_ix, value_ix]))
+    area_ix = header.index('LotArea')
+    newlines = lines.map(lambda x: [int(year)] + grab_columns(x, [precinct_ix, value_ix, area_ix]))
     newlines = newlines.filter(lambda x: x[1] != 'PolicePrct' and 'NULL' not in x)
-    newlines = newlines.map(lambda x: ((x[0], x[1]), x[2]))
+    newlines = newlines.map(lambda x: ((x[0], x[1]), (x[2], x[3])))
     return newlines
 
 
@@ -65,7 +69,7 @@ if __name__ == "__main__":
         newlines = newlines.union(nl)
 
     avg_by_key = newlines \
-        .mapValues(lambda v: (float(v), float(1.))) \
+        .mapValues(lambda v: (float(v[0]), float(v[1]))) \
         .reduceByKey(lambda a, b: (a[0] + b[0], a[1] + b[1])) \
         .mapValues(lambda v: v[0] / v[1])
 
