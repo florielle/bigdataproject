@@ -7,30 +7,18 @@ import sys
 from pyspark import SparkContext
 from csv import reader
 
-read_file = sys.argv[1]
-out_file = sys.argv[2]
-
-def get_year(x):
-    x = x.split('\t')
-    if x[3] != 'VALID':
-        return ('NULL', 'NULL')
-    date = x[0]
-    year = int(date[-4:])
-    return (year, 1)
-
-
 if __name__ == "__main__":
     sc = SparkContext()
 
-    lines = sc.textFile(read_file)
+    lines = sc.textFile(sys.argv[1], 1)
 
-    years = lines.map(lambda x: get_year(x))\
-        .filter(lambda x: x[0] != 'NULL')
+    by_year_precinct = lines.mapPartitions(lambda x: reader(x))\
+    .filter(lambda x: x != '')\
+    .map(lambda x: ((x[1][-4:], x[14]),1))\
+    .reduceByKey(lambda x,y: x+y)\
+    .sortByKey()\
+    .map(lambda x: '{0}\t{1}\t{2}'.format(x[0][0], x[0][1], x[1]))
 
-    years_cum = years.reduceByKey(lambda x, y: x + y)\
-        .map(lambda x: '{0}\t{1}'.format(x[0], x[1]))
-    
-
-    years.saveAsTextFile(out_file)
+    by_year_precinct.saveAsTextFile("by_precinct_year.out")
 
     sc.stop()
