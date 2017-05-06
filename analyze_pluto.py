@@ -17,7 +17,6 @@ files = ['BX13V1.csv', 'SI14v1.csv', 'QN13V1.csv', 'BX09v1.csv', 'MN13v2.csv', '
          'MN07C.csv', 'QN07C.csv', 'SI07C.csv']
 
 # Assumes the files are in ./data/PLUTO
-files = ['./data/PLUTO/' + f for f in files]
 sc = SparkContext()
 
 def grab_columns(x, columns):
@@ -53,10 +52,8 @@ def process_file(filename):
 
 
 if __name__ == "__main__":
-    
-
     newlines = process_file(files[0])
-    
+
     # Get the necessary information for every file
     for file in files[1:]:
         print('Processing {0}'.format(file))
@@ -64,18 +61,19 @@ if __name__ == "__main__":
             nl = process_file(file)
         except ValueError:
             continue
-        #a = nl.collect()
+        # a = nl.collect()
         newlines = newlines.union(nl)
-    
-        avg_by_key = newlines \
+
+    avg_by_key = newlines \
         .mapValues(lambda v: (float(v), float(1.))) \
-        .reduceByKey(lambda a,b: (a[0]+b[0], a[1]+b[1])) \
-        .mapValues(lambda v: v[0]/v[1])
-    
-        avg_by_key.saveAsTextFile("value_by_price_precinct.out")
-    '''
+        .reduceByKey(lambda a, b: (a[0] + b[0], a[1] + b[1])) \
+        .mapValues(lambda v: v[0] / v[1])
+
+    avg_by_key.saveAsTextFile("value_by_year_precinct.out")
+
+'''
     
     lines = sc.textFile('./PLUTO/MN11V2.csv', 1)
-    
-    
-    '''
+
+
+'''
