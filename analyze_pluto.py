@@ -69,11 +69,10 @@ if __name__ == "__main__":
         .reduceByKey(lambda a, b: (a[0] + b[0], a[1] + b[1])) \
         .mapValues(lambda v: v[0] / v[1])
 
-    avg_by_key.saveAsTextFile("value_by_year_precinct.out")
+    output = avg_by_key.map(lambda x: '{0}\t{1}\t{2}'.format(x[0][0], x[0][1], x[1]))
+
+    output.saveAsTextFile("value_by_year_precinct.out")
 
 '''
-    
     lines = sc.textFile('./PLUTO/MN11V2.csv', 1)
-
-
 '''
