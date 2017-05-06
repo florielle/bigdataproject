@@ -73,6 +73,4 @@ if __name__ == "__main__":
 
     output.saveAsTextFile("value_by_year_precinct.out")
 
-'''
-    lines = sc.textFile('./PLUTO/MN11V2.csv', 1)
-'''
+    sc.stop()
