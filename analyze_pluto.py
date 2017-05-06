@@ -1,5 +1,5 @@
 from csv import reader
-from hdfs import Config
+from pyspark import SparkContext
 
 boroughs = ['BK', 'MN', 'QN', 'SI']
 files = ['BX13V1.csv', 'SI14v1.csv', 'QN13V1.csv', 'BX09v1.csv', 'MN13v2.csv', 'BX15v1.csv',
@@ -50,27 +50,31 @@ def process_file(filename):
     newlines = newlines.map(lambda x: ((x[0], x[1]), x[2]))
     return newlines
 
-newlines = process_file(files[0])
 
-# Get the necessary information for every file
-for file in files[1:]:
-    print('Processing {0}'.format(file))
-    try:
-        nl = process_file(file)
-    except ValueError:
-        continue
-    #a = nl.collect()
-    newlines = newlines.union(nl)
+if __name__ == "__main__":
+    sc = SparkContext()
 
-    avg_by_key = newlines \
-    .mapValues(lambda v: (float(v), float(1.))) \
-    .reduceByKey(lambda a,b: (a[0]+b[0], a[1]+b[1])) \
-    .mapValues(lambda v: v[0]/v[1])
-
-    avg_by_key.saveAsTextFile("value_by_price_precinct.out")
-'''
-
-lines = sc.textFile('./PLUTO/MN11V2.csv', 1)
-
-
-'''
+    newlines = process_file(files[0])
+    
+    # Get the necessary information for every file
+    for file in files[1:]:
+        print('Processing {0}'.format(file))
+        try:
+            nl = process_file(file)
+        except ValueError:
+            continue
+        #a = nl.collect()
+        newlines = newlines.union(nl)
+    
+        avg_by_key = newlines \
+        .mapValues(lambda v: (float(v), float(1.))) \
+        .reduceByKey(lambda a,b: (a[0]+b[0], a[1]+b[1])) \
+        .mapValues(lambda v: v[0]/v[1])
+    
+        avg_by_key.saveAsTextFile("value_by_price_precinct.out")
+    '''
+    
+    lines = sc.textFile('./PLUTO/MN11V2.csv', 1)
+    
+    
+    '''
