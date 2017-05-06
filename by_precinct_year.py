@@ -26,6 +26,8 @@ if __name__ == "__main__":
 
     years = lines.map(lambda x: get_year(x))\
         .filter(lambda x: x[0] != 'NULL')
+
+    years_cum = years.reduceByKey(lambda x, y: x + y)\
         .map(lambda x: '{0}\t{1}'.format(x[0], x[1]))
     
 
