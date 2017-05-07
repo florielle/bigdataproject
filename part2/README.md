@@ -8,8 +8,20 @@ All data for this part of the project have been uploaded to Dropbox and can be a
 spark-submit SCRIPT_NAME.py weather.tsv
 ```
 
-### Other Scripts
-`avg_day_noise_complaints.py` is to be run on noise complaint filtered 311 Complaint data can be run with the following command:
+### Noise Complaint and DUI Scripts
+`avg_day_noise_complaints.py` is to be run on noise complaint filtered 311 Complaint data (available in the DropBox) can be run with the following command:
 ```
-spark-submit avg_day_noise_complaints.py noise_complaints.csv
+hfs -put noise_complaints.csv
+spark-submit avg_day_noise_complaints.py /user/YOUR_NETID/noise_complaints.csv
 ```
+
+`daily_noise_complaints.py` is also to be run on noise complaint filtered 311 Complaint data as we did in the previous script and can be run with the following command:
+```
+spark-submit daily_DUI_crimes.py /user/YOUR_NETID/noise_complaints.csv
+```
+
+`daily_DUI_crimes.py` is to be run on our original cleaned csv (assuming that is still in your HDFS directory and can be run with the following command:
+```
+spark-submit daily_DUI_crimes.py /user/YOUR_NETID/cleaned_data.csv
+```
+
