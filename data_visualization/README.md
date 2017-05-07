@@ -5,6 +5,9 @@ This folder contains a mixture of Excel workbooks, Tableau workbooks, and Jupyte
 #### data folder
 This subfolder contains the csv files used to create the visualizations, which were created by taking the outputs of our Spark scripts. They are required to run the commands within the Jupyter notebook.
 
+#### ipynb instructions
+Download the data from the data folder and run all of the commands in Jupyter notebooks.
+
 #### Excel instructions
 `borough_pop.xls`
 See section 8.2 in the project report for the data sources and calculation methodology. A line plot was created using a Primary axis for the **crimes per capita** and a Secondary axis for **population density**.
