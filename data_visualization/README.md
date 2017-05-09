@@ -8,6 +8,8 @@ This subfolder contains the csv files used to create the visualizations, which w
 #### ipynb instructions
 Download the data from the data folder and run all of the commands in Jupyter notebooks.
 
+*Note: Photoshop was used to overlay the Rain and Snow plots onto the daily crime calendar plot*
+
 #### Excel instructions
 `borough_pop.xls`
 See section 8.2 in the project report for the data sources and calculation methodology. A line plot was created using a Primary axis for the **crimes per capita** and a Secondary axis for **population density**.
