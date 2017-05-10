@@ -12,10 +12,10 @@ Download the data from the data folder and run all of the commands in Jupyter no
 
 #### Excel instructions
 `borough_pop.xls`
-See section 8.2 in the project report for the data sources and calculation methodology. A line plot was created using a Primary axis for the **crimes per capita** and a Secondary axis for **population density**.
+See section 9.2 in the project report for the data sources and calculation methodology. A line plot was created using a Primary axis for the **crimes per capita** and a Secondary axis for **population density**.
 
 `sentence_length.xls`
-See section 8.3 in the project report for the data sources and calculation methodology. A line plot was created using a Primary axis for the **crime counts** and a Secondary axis for **maximum sentence length**.
+See section 9.3 in the project report for the data sources and calculation methodology. A line plot was created using a Primary axis for the **crime counts** and a Secondary axis for **maximum sentence length**.
 
 `Date, DUI, Noise, and Race viz.xls`
 This can be found on dropbox: https://www.dropbox.com/sh/xrxl0s2cck3gu8f/AADmT9yxogCy4ieRBYkEOrbSa?dl=0. Instructions for each of the visualizations can be found within separate tabs of the Excel file.
