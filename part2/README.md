@@ -27,3 +27,10 @@ spark-submit daily_DUI_crimes.py /user/YOUR_NETID/noise_complaints.csv
 spark-submit daily_DUI_crimes.py /user/YOUR_NETID/cleaned_data.csv
 ```
 
+### Pluto Dataset Processing
+Requires: [PLUTO](https://www1.nyc.gov/site/planning/data-maps/open-data/dwn-pluto-mappluto.page) dataset files located in ../data/PLUTO
+
+`analyze_pluto.py` goes through the PLUTO datset files and returns a file containing int(year), int(precinct), float(mean property value by square feet) in tsv format.
+```
+spark-submit analyze_pluto.py
+```
