@@ -15,3 +15,5 @@ The following files were used in the analysis performed in this project:
 * 2014v1: https://www1.nyc.gov/assets/planning/download/zip/data-maps/open-data/nyc_pluto_14v1.zip
 * 2014v2: https://www1.nyc.gov/assets/planning/download/zip/data-maps/open-data/nyc_pluto_14v2.zip
 * 2015v1: https://www1.nyc.gov/assets/planning/download/zip/data-maps/open-data/nyc_pluto_15v1.zip
+
+After unzipping the files all names were normalized to .csv and uppercase before running the scripts. 
