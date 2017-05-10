@@ -1,6 +1,6 @@
 '''
 Aggregates by the precinct in which the incident occurred
-and computes the total count per precinct.
+and computes the total count per precinct per year.
 '''
 from __future__ import print_function
 import sys
