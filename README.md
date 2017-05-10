@@ -1,6 +1,8 @@
 # Big Data Project
 ## Joyce Wu, Felipe Ducau, Alex Simonoff
 
+### [Project Report](https://github.com/florielle/bigdataproject/blob/master/BigDataProjectSubmission.pdf)
+
 ### Data Used
 The dataset used for this project can be downloaded from the [NYC Open Data](https://data.cityofnewyork.us/Public-Safety/NYPD-Complaint-Data-Historic/qgea-i56i) portal.
 
