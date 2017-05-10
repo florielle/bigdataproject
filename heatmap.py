@@ -25,7 +25,7 @@ def create_crimes_dict(by_precinct_file):
             line = line[1:-1]
             line = line.split(',')
             precinct = int(line[0][1:-1])
-            count = int(line[1])
+            count = float(line[1])
             crimes_dict[precinct] = count
     return crimes_dict
 
@@ -52,7 +52,7 @@ if __name__ == "__main__":
     p_json = json.load(open(precinct_geojson_file, 'r'))
     crimes_dict = create_crimes_dict(counts_file)
     crimes_dict_norm = normalize_dict(crimes_dict)
-    cmap = get_cmap('YlOrRd')
+    cmap = get_cmap('seismic')
 
     color_dict = {i: get_color(cmap, j) for i, j in crimes_dict_norm.items()}
 

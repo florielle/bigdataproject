@@ -1,3 +1,8 @@
+'''
+Reads PLUTO dataset files from ../data/PLUTO/ and returns tuples of the form:
+int(year)\t int(precinct)\t float(mean property value per square feet)
+'''
+
 from csv import reader
 from pyspark import SparkContext
 
@@ -40,10 +45,9 @@ def process_file(filename):
     Read file and return year, AssessTot and PolicePrct
     '''
     year = '20' + filename[2:4]
-    lines = sc.textFile('./PLUTO/' + filename, 1)
+    lines = sc.textFile('../data/PLUTO/' + filename, 1)
     header = lines.first()
-    #lines = lines.filter(lambda x: x != header)
-    #lines = lines.mapPartitions(lambda x: reader(x.replace('\0', '')))
+
     header = header.split(',')
     header = [h.replace('"', '') for h in header]
     value_ix = header.index('AssessTot')

@@ -17,7 +17,7 @@ if __name__ == "__main__":
             return datetime.strftime(day, '%m/%d/%Y')
         except:
             return ''
-    
+
     def parse_temp(temp):
         try:
             return float(temp.strip(" F"))
